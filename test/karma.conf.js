@@ -26,6 +26,12 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+        'bower_components/angucomplete-alt/angucomplete-alt.js',
+        'bower_components/angular-bootstrap/ui-bootstrap.js',
+        'bower_components/angular-ui-router/release/angular-ui-router.js',
+        'bower_components/angular-ui-utils/ui-utils.js',
+        'bower_components/angular-ui-map/ui-map.js',
+        'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
@@ -52,8 +58,22 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+        'karma-coverage'
     ],
+
+      // coverage reporter generates the coverage
+      reporters: ['progress', 'coverage'],
+      preprocessors: {
+          'app/scripts/controllers/*.js' : ['coverage'],
+          'app/scripts/services/*.js' : ['coverage'],
+          'app/scripts/directives/*.js' : ['coverage'],
+          'app/scripts/*.js' : ['coverage']
+      },
+      coverageReporter: {
+          type : 'html',
+          dir : 'coverage/'
+      },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
@@ -63,7 +83,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG
 
     // Uncomment the following lines if you are using grunt's server to run the tests
     // proxies: {
