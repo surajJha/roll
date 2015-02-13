@@ -37,8 +37,9 @@ class UserController
      */
 
     public function getEventsByCategory(){
-        $category_name = $_GET['category_name'];
+        $category_name = (isset($_GET['category_name']) && $_GET['category_name']!=null )?$this->custom_filter_input($_GET['category_name']):'';
         $model = new UserModel();
+
         $result = $model->getEventsByCategory($category_name);
         if($result['status'] == 'success')
         {
