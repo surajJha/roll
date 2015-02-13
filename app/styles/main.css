@@ -95,6 +95,131 @@ body{
     background-color:#290066;
 }
 
+/*EVENTS DIV CSS*/
+
+/*.grid{*/
+    /*width: 33%;*/
+    /*float: left;*/
+    /*cursor: pointer;*/
+    /*position: absolute;*/
+/*}*/
+
+.grid{
+    padding-left: 12%;
+}
+
+
+.grid .darken:hover img {
+    opacity: 0.3;
+
+}
+
+.darken{
+    margin-bottom: -6%;
+    margin-right: -4%;
+}
+
+
+figure {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
+    background: black;
+    height:400px;
+    width:70%;
+}
+
+
+.featured-image{
+    width:100%;
+    height:400px;
+    opacity:1.0;
+}
+
+.featured-image-info{
+    position: absolute;
+    width: 70%;
+    left: 7%;
+    top: 7%;
+    height: 400px;
+}
+
+.events {
+    background: url('../images/bg.png') no-repeat bottom;
+    background-size: 100% 100%;
+    font-size:100px;
+    text-align:center;
+}
+
+
+.featured-image-info span {
+    top: 100px;
+    position: relative;
+    width:70%;
+    height:400px;
+    text-align: center;
+    color: white;
+}
+
+.event-heading{
+    color:#190033;
+}
+
+/* Without proper naming*/
+
+
+
+
+
+
+
+/*==============================================*/
+
+.cat-container{
+    float:left;
+    width:100%;
+    background: url('../images/shadow.png') no-repeat bottom;
+    background-size: 100% 16px;
+    padding-bottom:50px;
+}
+
+.category{
+    float:left;
+    position:relative;
+    font-family:myFirstFont;
+    top:0px;
+    left:4%;
+    font-size:40px;
+    display: block;
+    width: 300px;
+    height:110px;
+    margin: 20px 20px;
+    padding: 10px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    opacity:0.8;
+    text-align:center;
+    color:white;
+
+}
+.category:hover{opacity:1.0;}
+
+.t1{background:#190033;color:white;}
+.t2{background:#4c0099;color:white;}
+.t3{background:#330066;color:white;}
+.t4{background:#5500aa;color:white;}
+.t5{background:#100011;color:white;}
+.t6{background:#180022;color:white;}
+.t7{background:#6600dd;color:white;}
+.t8{background:#100044;color:white;}
+.t9{background:#5500aa;color:white;}
+
+.card-container{
+    float:left;
+    width:100%;
+}
+
 
 
 /*TUSHAR"S STYLING*/
