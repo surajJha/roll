@@ -7,14 +7,18 @@
     font-family: myFirstFont;
     src: url(SketchRockwell-Bold.ttf);
 }
-html,body {
-    height: 100%;
+
+body{
+    background-color: white;
+    font-family:myFirstFont;
+    z-index:-1;
+    color:white;
 }
 
 .map-canvas {
     height: 400px;
 }
-
+/*       NAVBAR CSS         */
 .navbar_header{
     background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
     background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
@@ -44,28 +48,8 @@ html,body {
     z-index: 2;
 }
 
-body{
-    background-color: white;
-    font-family:myFirstFont;
-    z-index:-1;
-    color:black;
-}
-
-.img-container{
-    display:inline-block;
-    /*top:0px;*/
-    /*left:0px;*/
-    width:101%;
-    height:600px;
-    background-image:url("../images/MumbaiSkyline.jpg");
-    background-size:100% 600px;
-    background-repeat:no-repeat;
-
-}
-
-
 .input-search{
-    width: 16%;
+    width: 25%;
     height: 40px;
     padding-left: 1%;
     font-size: 25px;
@@ -74,10 +58,9 @@ body{
     border-radius: 4px;
 }
 
-
 .form-inline{
-   margin-left: 20%;
-    margin-top: 10%;
+    margin-left: 30%;
+    margin-top: 27px;
 }
 
 .event-search-btn{
@@ -85,24 +68,34 @@ body{
     font-size:25px;
     border-color:white;
     padding:5px 5px;
-    width:10%;
+    width:15%;
     height: 40px;
     display: inline;
-    margin-top: -5px;
+    margin-top: -7px;
 }
 
 .btn:hover{
     background-color:#290066;
 }
 
-/*EVENTS DIV CSS*/
+/*         FULL MEDIA CSS          */
 
-/*.grid{*/
-    /*width: 33%;*/
-    /*float: left;*/
-    /*cursor: pointer;*/
-    /*position: absolute;*/
-/*}*/
+.img-container{
+    display:inline-block;
+    width:101%;
+    height:600px;
+    background-image:url("../images/MumbaiSkyline.jpg");
+    background-size:100% 600px;
+    background-repeat:no-repeat;
+}
+
+.form-search-heading{
+    margin-top: 200px;
+    margin-left: 23%;
+}
+
+
+/*EVENTS DIV CSS*/
 
 .grid{
     padding-left: 12%;
@@ -115,7 +108,7 @@ body{
 }
 
 .darken{
-    margin-bottom: -6%;
+    margin-top: -53px;
     margin-right: -4%;
 }
 
@@ -127,7 +120,7 @@ figure {
     -webkit-margin-end: 40px;
     background: black;
     height:400px;
-    width:70%;
+    /*width:70%;*/
 }
 
 
@@ -140,7 +133,7 @@ figure {
 .featured-image-info{
     position: absolute;
     width: 70%;
-    left: 7%;
+    left: 13%;
     top: 7%;
     height: 400px;
 }
@@ -166,34 +159,34 @@ figure {
     color:#190033;
 }
 
-/* Without proper naming*/
+/*FOOTER CSS*/
 
-
-
-
-
-
-
-/*==============================================*/
+#grad {
+    text-align:center;
+    height:200px;
+    font-size:40px;
+    background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#330066,#190033); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#330066,#190033); /* Standard syntax */
+}
 
 .cat-container{
     float:left;
-    width:100%;
-    background: url('../images/shadow.png') no-repeat bottom;
-    background-size: 100% 16px;
     padding-bottom:50px;
+    font-size:100px;
+    text-align:center;
 }
 
 .category{
     float:left;
     position:relative;
     font-family:myFirstFont;
-    top:0px;
+    top:0;
     left:4%;
     font-size:40px;
-    display: block;
     width: 300px;
-    height:110px;
+    height:122px;
     margin: 20px 20px;
     padding: 10px 10px;
     border-radius:10px;
@@ -215,39 +208,7 @@ figure {
 .t8{background:#100044;color:white;}
 .t9{background:#5500aa;color:white;}
 
-.card-container{
-    float:left;
-    width:100%;
-}
-
-
-
-/*TUSHAR"S STYLING*/
-
-/* CSS Document */
-
-.db{
-
-    float:left;
-    position:relative;
-    font-family:myFirstFont;
-    top:0px;
-    left:4%;
-    font-size:40px;
-    display: block;
-    width: 300px;
-    height: 70px;
-    margin: 10px 0px;
-    padding: 10px 10px;
-    border-radius:15px;
-    cursor:pointer;
-    opacity:0.8;
-    text-align:center;
-    color:white;
-    border-style:solid;
-    border-color:white;
-
-}
+/*TUSHAR'S STYLING*/
 
 /*social buttons*/
 .btn-social{
