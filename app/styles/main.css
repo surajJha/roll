@@ -48,7 +48,7 @@ body{
     z-index: 2;
 }
 
-.input-search{
+#input-search{
     width: 25%;
     height: 40px;
     padding-left: 1%;
@@ -61,6 +61,7 @@ body{
 .form-inline{
     margin-left: 30%;
     margin-top: 27px;
+    color: #000000;
 }
 
 .event-search-btn{

@@ -8,10 +8,17 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-    .controller('homeController', function ($scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    .controller('homeController', function ($scope, $rootScope, $http, userTaskFactory) {
+        $scope.submit = function() {
+
+            userTaskFactory.getEventBySearch($scope.testObj.title, $scope.testObj.description).then(function(result)
+            {
+
+                console.log(result);
+            })
+            //
+            //alert('About to submit ' + $scope.testObj.title +' '+$scope.testObj.description);
+            //console.log($scope.testObj);
+        }
+
     });

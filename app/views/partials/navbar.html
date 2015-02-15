@@ -6,10 +6,25 @@
                 <p class="logo_text_header">LOGO</p>
             </div>
             <div class="col-lg-9">
-                <form method="get" action="/" class="form-inline" >
-                    <input name="location" class="input-search" type="text"  placeholder="Location">
-                    <input name="category" class="input-search" type="text"  placeholder="Category">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block event-search-btn">Search</button>
+                <form class="form-inline" role="form" name="AddShareForm" novalidate ng-controller="homeController" ng-submit="AddShareForm.$valid && submit()" >
+                    <div class="form-group">
+                        <div class="col-xs-10 col-xl-10">
+                            <angucomplete-alt id="members"
+                                              placeholder="Search members"
+                                              pause="400"
+                                              selected-object="testObj"
+                                              remote-url="http://localhost/shout/server/userController.php?func=getSearchResults&city=Mumbai&q="
+                                              remote-url-data-field=""
+                                              title-field="area_name"
+                                              description-field="type"
+                                              input-class="form-control form-control-small"/>
+                        </div>
+                    </div>
+
+                            <button class="blue-button btn btn-lg btn-primary btn-block event-search-btn" type="submit" >Search</button>
+                    <!--<input name="location" class="input-search" type="text"  placeholder="Location">-->
+                    <!--<input name="category" class="input-search" type="text"  placeholder="Category">-->
+                    <!--<button type="submit" class="blue-button btn btn-lg btn-primary btn-block event-search-btn">Search</button>-->
                 </form>
             </div>
         </div>
