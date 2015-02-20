@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: VenuesearchcontrollerCtrl', function () {
+describe('Controller: venueSearchController', function () {
 
   // load the controller's module
   beforeEach(module('rollApp'));
 
-  var VenuesearchcontrollerCtrl,
+  var venueSearchController,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    VenuesearchcontrollerCtrl = $controller('VenuesearchcontrollerCtrl', {
+      venueSearchController = $controller('venueSearchController', {
       $scope: scope
     });
   }));

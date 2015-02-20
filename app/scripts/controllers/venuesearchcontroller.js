@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name rollApp.controller:VenuesearchcontrollerCtrl
+ * @name rollApp.controller:venueSearchController
  * @description
- * # VenuesearchcontrollerCtrl
+ * # venueSearchController
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('VenuesearchcontrollerCtrl', function ($scope) {
+  .controller('venueSearchController', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -25,21 +25,32 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
         // For any unmatched url, send to /route1
         $urlRouterProvider.otherwise("/home")
-        $stateProvider .state('main', {
-            url:'/main',
-            templateUrl:'views/main.html',
-            controller : 'MainCtrl'
-        }).state('about', {
-            url:'/about',
-            templateUrl:'views/about.html',
-            controller : 'AboutCtrl'
-
-        }).state('home', {
+        $stateProvider .state('home', {
             url:'/home',
             templateUrl:'views/home.html',
             controller : 'homeController'
-
+        }).state('categories', {
+            url:'/categories',
+            templateUrl:'views/searchResultByCategory.html',
+            controller : 'categorySearchController'
+        }).state('area', {
+            url:'/area',
+            templateUrl:'views/searchResultByArea.html',
+            controller : 'areaSearchController'
+        }).state('venue', {
+            url:'/venue',
+            templateUrl:'views/searchResultByVenue.html',
+            controller : 'venueSearchController'
+        }).state('events', {
+            url:'/events',
+            templateUrl:'views/searchResultByEventName.html',
+            controller : 'eventSearchController'
+        }).state('event', {
+            url:'/event',
+            templateUrl:'views/event_details.html',
+            controller : 'EventDetailsController'
         })
+
 
   }).run(function($rootScope){
         /**

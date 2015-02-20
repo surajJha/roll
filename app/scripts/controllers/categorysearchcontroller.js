@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name rollApp.controller:CategorysearchcontrollerCtrl
+ * @name rollApp.controller:categorySearchController
  * @description
- * # CategorysearchcontrollerCtrl
+ * # categorySearchController
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('CategorysearchcontrollerCtrl', function ($scope) {
+  .controller('categorySearchController', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name rollApp.controller:EventsearchcontrollerCtrl
+ * @name rollApp.controller:eventSearchController
  * @description
- * # EventsearchcontrollerCtrl
+ * # eventSearchController
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('EventsearchcontrollerCtrl', function ($scope) {
+  .controller('eventSearchController', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
