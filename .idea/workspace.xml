@@ -2,42 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5cc108c-82bb-4a3f-834a-cba2045df5c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Comedy.png" afterPath="$PROJECT_DIR$/app/images/Comedy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Food.png" afterPath="$PROJECT_DIR$/app/images/Food.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/HRC.jpg" afterPath="$PROJECT_DIR$/app/images/HRC.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/House.jpg" afterPath="$PROJECT_DIR$/app/images/House.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Irish.jpg" afterPath="$PROJECT_DIR$/app/images/Irish.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/MumbaiSkyline.jpg" afterPath="$PROJECT_DIR$/app/images/MumbaiSkyline.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Music.png" afterPath="$PROJECT_DIR$/app/images/Music.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Party.png" afterPath="$PROJECT_DIR$/app/images/Party.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/Trek.png" afterPath="$PROJECT_DIR$/app/images/Trek.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/TrekM.jpg" afterPath="$PROJECT_DIR$/app/images/TrekM.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/aib.jpg" afterPath="$PROJECT_DIR$/app/images/aib.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/bg.png" afterPath="$PROJECT_DIR$/app/images/bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/cal.png" afterPath="$PROJECT_DIR$/app/images/cal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/clock.png" afterPath="$PROJECT_DIR$/app/images/clock.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/facebook.jpg" afterPath="$PROJECT_DIR$/app/images/facebook.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/flag.png" afterPath="$PROJECT_DIR$/app/images/flag.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/googleplus.jpg" afterPath="$PROJECT_DIR$/app/images/googleplus.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/left-arrow.jpg" afterPath="$PROJECT_DIR$/app/images/left-arrow.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/left-arrow.png" afterPath="$PROJECT_DIR$/app/images/left-arrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/loc.png" afterPath="$PROJECT_DIR$/app/images/loc.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/logo.png" afterPath="$PROJECT_DIR$/app/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/right-arrow copy.jpg" afterPath="$PROJECT_DIR$/app/images/right-arrow copy.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/right-arrow.png" afterPath="$PROJECT_DIR$/app/images/right-arrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/rupee.png" afterPath="$PROJECT_DIR$/app/images/rupee.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/shadow.png" afterPath="$PROJECT_DIR$/app/images/shadow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/sunburn.jpg" afterPath="$PROJECT_DIR$/app/images/sunburn.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/images/twitter.jpg" afterPath="$PROJECT_DIR$/app/images/twitter.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/event_details.html" afterPath="$PROJECT_DIR$/app/views/event_details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/karma.conf.js" afterPath="$PROJECT_DIR$/test/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/navbar.html" afterPath="$PROJECT_DIR$/app/views/partials/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/directives/navbar.js" afterPath="$PROJECT_DIR$/app/scripts/directives/navbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/spec/directives/navbar.js" afterPath="$PROJECT_DIR$/test/spec/directives/navbar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="roll.iws" />
@@ -123,7 +87,7 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.354717" vertical-offset="3664" max-vertical-offset="4608">
+            <state vertical-scroll-proportion="0.969697" vertical-offset="3340" max-vertical-offset="4608">
               <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
               <folding />
             </state>
@@ -196,7 +160,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="57" />
-    <option name="y" value="109" />
+    <option name="y" value="21" />
     <option name="width" value="1309" />
     <option name="height" value="747" />
   </component>
@@ -413,16 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1423800318030</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added latest database file">
+      <created>1424505494015</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1424505494015</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="109" width="1309" height="747" extended-state="0" />
+    <frame x="57" y="21" width="1309" height="747" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11246201" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.112804875" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18547751" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -436,7 +407,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -857,7 +827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.354717" vertical-offset="3664" max-vertical-offset="4608">
+        <state vertical-scroll-proportion="0.969697" vertical-offset="3340" max-vertical-offset="4608">
           <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
           <folding />
         </state>
