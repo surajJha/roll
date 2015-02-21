@@ -209,6 +209,18 @@ figure {
 .t8{background:#100044;color:white;}
 .t9{background:#5500aa;color:white;}
 
+/*Event General Details CSS*/
+.event-general-details {
+    text-align:center;
+    height:126px;
+    font-size:40px;
+    background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#330066,#190033); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#330066,#190033); /* Standard syntax */
+    margin-left:5px;
+}
+
 /*TUSHAR'S STYLING*/
 
 /*social buttons*/

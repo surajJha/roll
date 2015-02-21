@@ -10,7 +10,7 @@
  */
 angular
   .module('rollApp', [
-        'ngAnimate',
+        //'ngAnimate',
         'ngCookies',
         'ngResource',
         'ngRoute',
