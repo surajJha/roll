@@ -10,6 +10,7 @@
 angular.module('rollApp')
     .controller('homeController', function ($scope, $rootScope, $http, userTaskFactory) {
         $scope.submit = function() {
+            console.log($scope.testObj);
 
             userTaskFactory.getEventBySearch($scope.testObj.title, $scope.testObj.description).then(function(result)
             {
