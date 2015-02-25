@@ -59,20 +59,20 @@ body{
 }
 
 .form-inline{
-    margin-left: 30%;
     margin-top: 27px;
     color: #000000;
 }
 
 .event-search-btn{
     font-family:myFirstFont;
-    font-size:25px;
+    font-size:22px;
     border-color:white;
-    padding:5px 5px;
-    width:15%;
-    height: 40px;
-    display: inline;
-    margin-top: -7px;
+    padding:3px;
+    height: 34px;
+}
+#members_value, .city_input_search{
+    width: 100%;
+    border-radius: 0;
 }
 
 .btn:hover{
@@ -247,4 +247,31 @@ figure {
     background-color: #c32f10;
     opacity: 0.9;
 }
+
+/*========search field styling=====*/
+.angucomplete-dropdown {
+    position: absolute;
+    z-index: 5;
+    width: 91%;
+    overflow-y: auto;
+    max-height: 200px;
+    background-color: #ffffff;
+    margin-top: 2px;
+}
+
+.angucomplete-row {
+    padding: 1%;
+    margin: 1%;
+}
+.angucomplete-row:hover {
+    background-color: lightblue;
+    color: #000000;
+}
+.angucomplete-title {
+
+}
+.angucomplete-description {
+    font-size: 12px;
+}
+
 
