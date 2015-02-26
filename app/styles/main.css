@@ -140,10 +140,11 @@ figure {
 }
 
 .events {
-    background: url('../images/bg.png') no-repeat bottom;
-    background-size: 100% 100%;
+    /*background: url('../images/bg.png') no-repeat bottom;*/
+    /*background-size: 100% 100%;*/
     font-size:100px;
     text-align:center;
+    background-color: rgba(68, 82, 87, 0.1);
 }
 
 
@@ -173,7 +174,9 @@ figure {
 }
 
 .cat-container{
-    float:left;
+    margin: auto;
+    padding-right: 13%;
+    padding-left: 13%;
     padding-bottom:50px;
     font-size:100px;
     text-align:center;
@@ -185,11 +188,11 @@ figure {
     font-family:myFirstFont;
     top:0;
     left:4%;
-    font-size:40px;
-    width: 300px;
+    font-size:35px;
+    width: 95%;
     height:122px;
-    margin: 20px 20px;
-    padding: 10px 10px;
+    margin: 9%;
+    padding: 3%;
     border-radius:10px;
     cursor:pointer;
     opacity:0.8;
@@ -267,6 +270,10 @@ figure {
     background-color: lightblue;
     color: #000000;
 }
+.angucomplete-row:active {
+    background-color: lightblue;
+    color: #000000;
+}
 .angucomplete-title {
 
 }
@@ -274,4 +281,16 @@ figure {
     font-size: 12px;
 }
 
+/*===========MAP CSS STYLING============*/
+.map-canvas {
+    margin-top: 100px;
+    height: 400px;
+    width: 100%;
+}
+hr.event-partition {
+    margin: 0px;
+    height: 7px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
+}
 

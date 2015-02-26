@@ -1,0 +1,1 @@
+1. add hover on mouse events for the search results dropdown
