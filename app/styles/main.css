@@ -294,3 +294,37 @@ hr.event-partition {
     box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
 }
 
+.schedule_type {
+    height: 70px;
+    font-size: 20px;
+    border-bottom: 2px solid #ccc;
+    margin-left: 10%;
+}
+.selectbox{
+    position:relative;
+    top:56px;
+    width:20%;
+    height:5px;
+    color:black;
+    background-color:white;
+    cursor:pointer;
+}
+
+p.event_type{
+    position:relative;
+    top:-40px;
+    margin-left:25%;
+}
+
+#today{
+    margin-left: 20%;
+}
+
+.selectbox:hover{
+    background-color:#ccc;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}

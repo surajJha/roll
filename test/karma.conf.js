@@ -32,6 +32,7 @@ module.exports = function(config) {
         'bower_components/angular-ui-utils/ui-utils.js',
         'bower_components/angular-ui-map/ui-map.js',
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+        'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
         'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

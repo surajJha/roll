@@ -8,18 +8,12 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-    .controller('homeController', function ($scope, $rootScope, $http, userTaskFactory) {
+    .controller('homeController', function ($scope, $state, $location, $rootScope, $http, userTaskFactory) {
         $scope.submit = function() {
-            console.log($scope.testObj);
-
-            userTaskFactory.getEventBySearch($scope.testObj.title, $scope.testObj.description).then(function(result)
-            {
-
-                console.log(result);
-            })
-            //
-            //alert('About to submit ' + $scope.testObj.title +' '+$scope.testObj.description);
-            //console.log($scope.testObj);
+            if($scope.testObj){
+                console.log($scope.testObj.description);
+                $state.go("events", {type: $scope.testObj.description, query: $scope.testObj.title});
+            }
         }
 
     });

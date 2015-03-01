@@ -126,19 +126,15 @@ class UserController
         {
             echo json_encode($result['data']);
         }
-        else
-        {
-            echo "No Search Results Found.";
-        }
-
     }
 
     public function getEventBySearch(){
         $searchParam = $this->custom_filter_input($_GET['searchParam']);
         $tablename = $this->custom_filter_input($_GET['tablename']);
+        $index = $this->custom_filter_input($_GET['index']);
 
         $model = new UserModel();
-        $result = $model->getEventBySearch($searchParam, $tablename);
+        $result = $model->getEventBySearch($searchParam, $tablename, $index);
 
         if($result['status'] == 'success')
         {
@@ -146,7 +142,7 @@ class UserController
         }
         else
         {
-            echo "No Search Results Found.";
+            echo "No Search Results Found";
         }
     }
 

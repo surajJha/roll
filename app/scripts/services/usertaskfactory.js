@@ -27,10 +27,10 @@ angular.module('rollApp')
          * getEventBySearch is to be placed in roll folder
          * this function displays the events based on search param and type
          */
-        factory.getEventBySearch = function(searchParam, tablename){
+        factory.getEventBySearch = function(searchParam, tablename, index){
             var defer = $q.defer();
 
-            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename)
+            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index)
                 .success(function(res){
                     defer.resolve(res);
                 })

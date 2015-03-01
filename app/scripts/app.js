@@ -20,7 +20,8 @@ angular
         'ui.utils',
         'ui.map',
         'ui.bootstrap',
-        'angucomplete-alt'
+        'angucomplete-alt',
+        'infinite-scroll'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
         // For any unmatched url, send to /route1
@@ -42,7 +43,9 @@ angular
             templateUrl:'views/searchResultByVenue.html',
             controller : 'venueSearchController'
         }).state('events', {
-            url:'/events',
+            url: '/events',
+            //url:'/events?type?query',
+            params:{'type': null, 'query':null},
             templateUrl:'views/searchResultByEventName.html',
             controller : 'eventSearchController'
         }).state('event', {
