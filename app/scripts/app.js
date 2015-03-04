@@ -30,18 +30,6 @@ angular
             url:'/home',
             templateUrl:'views/home.html',
             controller : 'homeController'
-        }).state('categories', {
-            url:'/categories',
-            templateUrl:'views/searchResultByCategory.html',
-            controller : 'categorySearchController'
-        }).state('area', {
-            url:'/area',
-            templateUrl:'views/searchResultByArea.html',
-            controller : 'areaSearchController'
-        }).state('venue', {
-            url:'/venue',
-            templateUrl:'views/searchResultByVenue.html',
-            controller : 'venueSearchController'
         }).state('events', {
             url: '/events',
             //url:'/events?type?query',
@@ -52,6 +40,10 @@ angular
             url:'/event',
             templateUrl:'views/event_details.html',
             controller : 'EventDetailsController'
+        }).state('category', {
+            url:'/category',
+            templateUrl:'views/searchResultByCategory.html',
+            controller : 'categorySearchController'
         })
 
 

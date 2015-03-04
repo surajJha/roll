@@ -9,23 +9,25 @@
  */
 angular.module('rollApp')
     .factory('userTaskFactory', function ($http, $q, $rootScope) {
-        // Service logic
-        // ...
-
         var factory = {};
 
-        // Public API here
-        /*
+        /**
+         Public API here
          Add all the public functions to the factory object
          and then return the factory object which
          will be then available to the controller
          which is using this factory
-         */
+         **/
 
 
         /**
-         * getEventBySearch is to be placed in roll folder
-         * this function displays the events based on search param and type
+         * Takes as input the search query and search type,
+         * such as a place name and type as area|venue|event name
+         * and returns a list of all results .
+         * @param searchParam
+         * @param tablename
+         * @param index
+         * @returns {jQuery.promise|promise.promise|d.promise|promise|.ready.promise|jQuery.ready.promise}
          */
         factory.getEventBySearch = function(searchParam, tablename, index){
             var defer = $q.defer();

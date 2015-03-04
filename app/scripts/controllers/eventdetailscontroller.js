@@ -51,11 +51,3 @@ angular.module('rollApp')
         })();
 
   });
-
-//{
-//    image: $rootScope.baseUrl+'/app/images/Irish.jpg'
-//},
-//{
-//    image: $rootScope.baseUrl+'/app/images/House.jpg'
-//}
-//
