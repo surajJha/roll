@@ -280,6 +280,14 @@ figure {
     background-color: lightblue;
     color: #000000;
 }
+
+.angucomplete-selected-row {
+    background-color: #add8e6;
+}
+
+.currently_hovered_search_result{
+    background-color: #add8e6;
+}
 .angucomplete-title {
 
 }
@@ -316,10 +324,16 @@ hr.event-partition {
     cursor:pointer;
 }
 
-p.event_type{
+.event_type{
     position:relative;
     top:-40px;
     margin-left:25%;
+    color: #000000;
+}
+
+a.event_type:hover{
+    text-decoration: none;
+    color: #000000;
 }
 
 #today{

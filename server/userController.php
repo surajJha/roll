@@ -132,9 +132,10 @@ class UserController
         $searchParam = $this->custom_filter_input($_GET['searchParam']);
         $tablename = $this->custom_filter_input($_GET['tablename']);
         $index = $this->custom_filter_input($_GET['index']);
+        $which_day = $this->custom_filter_input($_GET['which_day']);
 
         $model = new UserModel();
-        $result = $model->getEventBySearch($searchParam, $tablename, $index);
+        $result = $model->getEventBySearch($searchParam, $tablename, $index, $which_day);
 
         if($result['status'] == 'success')
         {
@@ -145,6 +146,7 @@ class UserController
             echo "No Search Results Found";
         }
     }
+
 
     function custom_filter_input($data)
     {
