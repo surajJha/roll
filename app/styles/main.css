@@ -308,7 +308,7 @@ hr.event-partition {
     box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
 }
 
-.schedule_type {
+.schedule_type, .category_type {
     height: 70px;
     font-size: 20px;
     border-bottom: 2px solid #ccc;
@@ -345,6 +345,25 @@ a.event_type:hover{
 }
 
 .row{
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.selbox,.sel{
+    position:relative;
+    width:10%;
+    height:30px;
+    text-align:center;
+    color:black;
+    background-color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+.selbox:active{
+    background-color:#ccc;
+}
+.sel{
+    background-color:#ccc;
+    width: 16%;
+    margin-left: 3%;
 }

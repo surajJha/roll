@@ -43,8 +43,34 @@ angular.module('rollApp')
             return defer.promise;
         }
 
+        /**
+         * Takes as input the category,
+         * such as comedy
+         * and returns a list of all results .
+         * @param category
+         * @param index
+         * @param which_day
+         * @returns {jQuery.promise|promise.promise|d.promise|promise|.ready.promise|jQuery.ready.promise}
+         */
+        factory.getEventByCategory = function(category, index, which_day){
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventByCategory&category='+category+'&index='+index+'&which_day='+which_day)
+                .success(function(res){
+                    defer.resolve(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
 
         return factory;
     });
+
+
+
 
 

@@ -15,4 +15,10 @@ angular.module('rollApp')
             }
         }
 
+        $scope.submitCategory = function(category) {
+            if(category){
+                $state.go("category", {category: category});
+            }
+        }
+
     });

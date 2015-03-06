@@ -147,6 +147,24 @@ class UserController
         }
     }
 
+    public function getEventByCategory(){
+        $category = $this->custom_filter_input($_GET['category']);
+        $index = $this->custom_filter_input($_GET['index']);
+        $which_day = $this->custom_filter_input($_GET['which_day']);
+
+        $model = new UserModel();
+        $result = $model->getEventsByCategory($category, $index, $which_day);
+
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            echo "No Search Results Found";
+        }
+    }
+
 
     function custom_filter_input($data)
     {
