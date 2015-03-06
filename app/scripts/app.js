@@ -38,6 +38,7 @@ angular
             controller : 'eventSearchController'
         }).state('event', {
             url:'/event',
+            params: {event_detail_id: null},
             templateUrl:'views/event_details.html',
             controller : 'EventDetailsController'
         }).state('category', {

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5cc108c-82bb-4a3f-834a-cba2045df5c9" name="Default" comment="integrated search with home search">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/categorysearchcontroller.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/categorysearchcontroller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/databaseConnection.php" afterPath="$PROJECT_DIR$/server/databaseConnection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/searchResultByCategory.html" afterPath="$PROJECT_DIR$/app/views/searchResultByCategory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userModel.php" afterPath="$PROJECT_DIR$/server/userModel.php" />
+    <list default="true" id="c5cc108c-82bb-4a3f-834a-cba2045df5c9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.css" afterPath="$PROJECT_DIR$/app/styles/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/searchResultByEventName.html" afterPath="$PROJECT_DIR$/app/views/searchResultByEventName.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/userController.php" afterPath="$PROJECT_DIR$/server/userController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/usertaskfactory.js" afterPath="$PROJECT_DIR$/app/scripts/services/usertaskfactory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="roll.iws" />
@@ -56,7 +59,7 @@
       <file leaf-file-name="searchResultByCategory.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/searchResultByCategory.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.384615" vertical-offset="408" max-vertical-offset="1241">
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1241">
               <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding />
             </state>
@@ -66,8 +69,8 @@
       <file leaf-file-name="searchResultByEventName.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/searchResultByEventName.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5377856" vertical-offset="0" max-vertical-offset="816">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.397482" vertical-offset="170" max-vertical-offset="816">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -76,7 +79,7 @@
       <file leaf-file-name="userModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/userModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="45.307693" vertical-offset="10035" max-vertical-offset="10659">
+            <state vertical-scroll-proportion="0.0" vertical-offset="8857" max-vertical-offset="9129">
               <caret line="521" column="41" selection-start-line="521" selection-start-column="41" selection-end-line="521" selection-end-column="41" />
               <folding>
                 <marker date="1425672416209" expanded="true" signature="1046:1806" placeholder="select ed.ev..event_detail..." />
@@ -102,21 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_details.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/event_details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.5" vertical-offset="382" max-vertical-offset="1207">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="usertaskfactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/usertaskfactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="996" max-vertical-offset="1768">
-              <caret line="77" column="124" selection-start-line="77" selection-start-column="124" selection-end-line="77" selection-end-column="124" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="1734">
+              <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -136,7 +129,37 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="1224">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventsearchcontroller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="1751">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1618" max-vertical-offset="6511">
+              <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1122">
+              <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -179,8 +202,8 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js" />
         <option value="$PROJECT_DIR$/server/userController.php" />
         <option value="$PROJECT_DIR$/server/userModel.php" />
-        <option value="$PROJECT_DIR$/app/scripts/services/usertaskfactory.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/usertaskfactory.js" />
         <option value="$PROJECT_DIR$/server/databaseConnection.php" />
       </list>
     </option>
@@ -229,6 +252,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -397,7 +421,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,20 +453,17 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -452,6 +472,9 @@
       <tasks />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="run karma tests" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="$PROJECT_DIR$/test/karma.conf.js">
@@ -542,7 +565,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425672830370</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="integrated search with home search">
+      <created>1425672907573</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1425672907573</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -550,27 +579,27 @@
     <editor active="false" />
     <layout>
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36436597" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0052950075" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2881997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.375" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16436845" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23212436" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -611,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1632">
           <caret line="2" column="78" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +669,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2482">
           <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="n#getEventByCategory#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getTodaysEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getTomorrowsEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getLatersEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getSearchResults#0;n#UserController#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -892,23 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.307692" vertical-offset="18" max-vertical-offset="1632">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76510066" vertical-offset="1618" max-vertical-offset="6511">
-          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1122">
-          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,45 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="1751">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/userController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0" vertical-offset="1178" max-vertical-offset="1972">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding>
-            <element signature="n#getEventByCategory#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#getTodaysEvents#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#getTomorrowsEvents#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#getLatersEvents#0;n#UserController#0;n#!!top" expanded="false" />
-            <element signature="n#getSearchResults#0;n#UserController#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/usertaskfactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="996" max-vertical-offset="1768">
-          <caret line="77" column="124" selection-start-line="77" selection-start-column="124" selection-end-line="77" selection-end-column="124" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/event_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.5" vertical-offset="382" max-vertical-offset="1207">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,13 +940,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21305841" vertical-offset="369" max-vertical-offset="1598">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="46" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/searchResultByCategory.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1241">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/event_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32864675" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/userModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="45.307693" vertical-offset="10035" max-vertical-offset="10659">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8857" max-vertical-offset="9129">
           <caret line="521" column="41" selection-start-line="521" selection-start-column="41" selection-end-line="521" selection-end-column="41" />
           <folding>
             <marker date="1425672416209" expanded="true" signature="1046:1806" placeholder="select ed.ev..event_detail..." />
@@ -993,11 +985,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js">
+    <entry file="file://$PROJECT_DIR$/server/userController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="1224">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
+        <state vertical-scroll-proportion="-7.0" vertical-offset="1178" max-vertical-offset="1972">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="n#getEventByCategory#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getTodaysEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getTomorrowsEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getLatersEvents#0;n#UserController#0;n#!!top" expanded="false" />
+            <element signature="n#getSearchResults#0;n#UserController#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,18 +1007,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/searchResultByCategory.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventdetailscontroller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="408" max-vertical-offset="1241">
-          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="1224">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/eventsearchcontroller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="1751">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1618" max-vertical-offset="6511">
+          <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1122">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/usertaskfactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="1734">
+          <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/searchResultByEventName.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5377856" vertical-offset="0" max-vertical-offset="816">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.397482" vertical-offset="170" max-vertical-offset="816">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding />
         </state>
       </provider>

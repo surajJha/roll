@@ -8,8 +8,7 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('eventSearchController', function ($scope, $stateParams, userTaskFactory){
-
+  .controller('eventSearchController', function ($scope, $state, $stateParams, userTaskFactory){
         $scope.last_fetched_index = -3;
         $scope.do_not_scroll = false;
         $scope.array_repeat_event = [];
@@ -18,9 +17,7 @@ angular.module('rollApp')
 
         $scope.formData={};
         $scope.formData.event_name = [];
-
-
-
+        $scope.formData.event_detail_id = [];
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
@@ -33,6 +30,7 @@ angular.module('rollApp')
                 }
                 else{
                     $scope.formData.event_name[0] = result[0].event_name;
+                    $scope.formData.event_detail_id[0] = result[0].event_detail_id;
                     console.log($scope.formData.event_name[0]);
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
@@ -81,8 +79,19 @@ angular.module('rollApp')
 
 
         $scope.init = function () {
+            if($stateParams.type == '' || $stateParams.type ==null){
+                $state.go("home");
+                return;
+            }
             $scope.getTodaysEventsBySearch();
         }
 
         $scope.init();
+
+        $scope.getEventDetail = function(event_detail_id){
+            console.log(event_detail_id);
+            if(event_detail_id){
+                $state.go("event", {event_detail_id: event_detail_id});
+            }
+        }
   });

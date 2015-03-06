@@ -8,7 +8,20 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('EventDetailsController', function ($scope) {
+  .controller('EventDetailsController', function ($scope, $stateParams,userTaskFactory) {
+
+        $scope.event_detail_id = '';
+
+        $scope.init = function(){
+            $scope.event_detail_id = $stateParams.event_detail_id;
+            console.log();
+            userTaskFactory.getEventDetail($scope.event_detail_id).then(function(result)
+            {
+                console.log(result);
+            })
+        }
+
+        $scope.init();
 
         $scope.myInterval = 3000;
         $scope.slides = [

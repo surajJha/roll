@@ -36,18 +36,20 @@ class UserController
      * all the events of particular category
      */
 
-    public function getEventsByCategory(){
-        $category_name = (isset($_GET['category_name']) && $_GET['category_name']!=null )?$this->custom_filter_input($_GET['category_name']):'';
-        $model = new UserModel();
+    public function getEventByCategory(){
+        $category = $this->custom_filter_input($_GET['category']);
+        $index = $this->custom_filter_input($_GET['index']);
+        $which_day = $this->custom_filter_input($_GET['which_day']);
 
-        $result = $model->getEventsByCategory($category_name);
+        $model = new UserModel();
+        $result = $model->getEventsByCategory($category, $index, $which_day);
         if($result['status'] == 'success')
         {
             echo json_encode($result['data']);
         }
         else
         {
-            echo "There are no existing events.";
+            echo "No Search Results Found";
         }
     }
 
@@ -147,13 +149,14 @@ class UserController
         }
     }
 
-    public function getEventByCategory(){
-        $category = $this->custom_filter_input($_GET['category']);
-        $index = $this->custom_filter_input($_GET['index']);
-        $which_day = $this->custom_filter_input($_GET['which_day']);
+    /*This function takes event_detail_id as and input
+    * and returns the detail of a particular event
+    */
 
+    public function getEventDetail(){
+        $event_detail_id = $this->custom_filter_input($_GET['event_detail_id']);
         $model = new UserModel();
-        $result = $model->getEventsByCategory($category, $index, $which_day);
+        $result = $model->getEventDetail($event_detail_id);
 
         if($result['status'] == 'success')
         {
@@ -161,10 +164,9 @@ class UserController
         }
         else
         {
-            echo "No Search Results Found";
+            echo "Oops!!! Something went wrong";
         }
     }
-
 
     function custom_filter_input($data)
     {

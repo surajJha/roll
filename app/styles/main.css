@@ -111,7 +111,15 @@ body{
 
 .grid .darken:hover img {
     opacity: 0.3;
+    cursor: pointer;
+}
 
+.grid .event:hover img {
+    opacity: 0.3;
+    cursor: pointer;
+}
+.event{
+    cursor: pointer;
 }
 
 .darken{
