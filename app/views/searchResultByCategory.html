@@ -1,30 +1,30 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-        <div class="row">
+        <div class="row" style="margin-top: 15px;">
             <div class="category_type">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="submitCategory('Food & Drinks')">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="">
                     Food & Drinks
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Comedy')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Comedy
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Music')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Music
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Outdoor')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Outdoor
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Nightlife')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Nightlife
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Festivals')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Festivals
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Culture')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Culture
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="submitCategory('Theatre')">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
                     Theatre
                 </div>
             </div>
@@ -48,7 +48,7 @@
             <div infinite-scroll='loadMoreCategoryEvent()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
                 <div ng-repeat="i in array_repeat_event">
                     <div class="row grid">
-                        <div class="col-lg-4" ng-repeat="j in i">
+                        <div class="col-lg-4 event" ng-repeat="j in i">
                             <figure>
                                 <img class="featured-image" src="images/Irish.jpg">
                             </figure>

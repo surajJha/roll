@@ -15,13 +15,18 @@ angular.module('rollApp')
       $scope.array_repeat_event = [];
       $scope.loop_counter = 0;
       $scope.which_day = "today";
+      $scope.isBusy = false;
 
       $scope.formData={};
       $scope.formData.event_name = [];
 
       $scope.loadMoreCategoryEvent = function() {
+
+        if($scope.isBusy) return; // request in progress, return
+
+        $scope.isBusy = true;
         $scope.last_fetched_index+=3;
-          console.log($scope.last_fetched_index);
+
         userTaskFactory.getEventByCategory($stateParams.category, $scope.last_fetched_index, $scope.which_day).then(function(result)
         {
           console.log(result);
@@ -29,6 +34,7 @@ angular.module('rollApp')
             $scope.do_not_scroll = true;
           }
           else{
+            $scope.isBusy = false;
             $scope.formData.event_name[0] = result[0].event_name;
             var temp_arr= [];
             for(var i=0; i<result.length; i++){
@@ -39,6 +45,7 @@ angular.module('rollApp')
             }
           }
         })
+
       };
 
       $scope.getTodaysEventsByCategory = function(){
