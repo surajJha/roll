@@ -8,8 +8,7 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('categorySearchController', function ($scope, $stateParams, userTaskFactory) {
-
+  .controller('categorySearchController', function ($scope, $state, $stateParams, userTaskFactory, $cookieStore) {
       $scope.last_fetched_index = -3;
       $scope.do_not_scroll = false;
       $scope.array_repeat_event = [];
@@ -21,6 +20,11 @@ angular.module('rollApp')
       $scope.formData.event_name = [];
 
       $scope.loadMoreCategoryEvent = function() {
+
+          if($stateParams.category == '' || $stateParams.category ==null){
+              $state.go("home");
+              return;
+          }
 
         if($scope.isBusy) return; // request in progress, return
 

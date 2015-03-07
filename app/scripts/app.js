@@ -42,8 +42,9 @@ angular
             templateUrl:'views/event_details.html',
             controller : 'EventDetailsController'
         }).state('category', {
-            url:'/category',
-            params:{'category': null},
+            url:'/category?category',
+            //url:'/events?type?query',
+           // params:{'category': null},
             templateUrl:'views/searchResultByCategory.html',
             controller : 'categorySearchController'
         })
