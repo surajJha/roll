@@ -9,15 +9,30 @@
  */
 angular.module('rollApp')
   .controller('eventSearchController', function ($scope, $state, $stateParams, userTaskFactory){
+
+        $scope.formData = {};
+        $scope.formData.event_detail_id = [];
+        $scope.formData.event_name = [];
+        $scope.formData.event_category = [];
+        $scope.formData.event_cost = [];
+        $scope.formData.event_overview = [];
+        $scope.formData.event_hashtags = [];
+        $scope.formData.venue_name = [];
+        $scope.formData.event_area = [];
+        $scope.formData.event_city = [];
+        $scope.formData.event_location = [];
+        $scope.formData.image = [];
+        $scope.formData.datetime = [];
+        $scope.formData.result_length = [];
+        $scope.formData.no_of_days = [];
+        $scope.formData.event_organizer_id = [];
+        $scope.encoded_image_path_array = [];
+
         $scope.last_fetched_index = -3;
         $scope.do_not_scroll = false;
         $scope.array_repeat_event = [];
         $scope.loop_counter = 0;
         $scope.which_day = "today";
-
-        $scope.formData={};
-        $scope.formData.event_name = [];
-        $scope.formData.event_detail_id = [];
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
@@ -29,8 +44,26 @@ angular.module('rollApp')
                     $scope.do_not_scroll = true;
                 }
                 else{
-                    $scope.formData.event_name[0] = result[0].event_name;
-                    $scope.formData.event_detail_id[0] = result[0].event_detail_id;
+                    for(var i=0; i< result.length; i++){
+                        $scope.formData.event_detail_id[i] = result[i].event_detail_id;
+                        $scope.formData.event_name[i] = result[i].event_name;
+                        $scope.formData.event_category[i] = result[i].category_name;
+                        $scope.formData.event_cost[i] = result[i].event_cost;
+                        $scope.formData.event_overview[i] = result[i].event_overview;
+                        $scope.formData.event_hashtags[i] = result[i].event_hashtags;
+                        $scope.formData.venue_name[i] = result[i].venue_name;
+                        $scope.formData.event_area[i] = result[i].event_area;
+                        $scope.formData.event_city[i] = result[i].event_city;
+                        $scope.formData.event_location[i] = result[i].event_location;
+                        $scope.formData.event_organizer_id = result[i].event_organizer_id;
+                        $scope.formData.image[i] = result[i].image;
+                        $scope.formData.datetime[i] = result[i].datetime;
+                        $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
+
+                    }
+                    console.log($scope.formData);
+                    //$scope.formData.event_name[0] = result[0].event_name;
+                    //$scope.formData.event_detail_id[0] = result[0].event_detail_id;
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
                         temp_arr.push(i);
