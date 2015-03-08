@@ -25,13 +25,12 @@ angular.module('rollApp')
             {
                // console.log(result[0].event_name);
 
-                if(result == 'No Search Results Found'){
+                if(result == ''){
                     $scope.do_not_scroll = true;
                 }
                 else{
                     $scope.formData.event_name[0] = result[0].event_name;
                     $scope.formData.event_detail_id[0] = result[0].event_detail_id;
-                    console.log($scope.formData.event_name[0]);
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
                         temp_arr.push(i);
@@ -92,6 +91,12 @@ angular.module('rollApp')
             console.log(event_detail_id);
             if(event_detail_id){
                 $state.go("event", {event_detail_id: event_detail_id});
+            }
+        }
+
+        $scope.loadAnotherCategory = function(category){
+            if(category){
+                $state.go("category", {category: category});
             }
         }
   });

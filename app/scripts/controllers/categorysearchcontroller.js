@@ -34,7 +34,7 @@ angular.module('rollApp')
         userTaskFactory.getEventByCategory($stateParams.category, $scope.last_fetched_index, $scope.which_day).then(function(result)
         {
           console.log(result);
-          if(result == 'No Search Results Found'){
+          if(result == ''){
             $scope.do_not_scroll = true;
           }
           else{
@@ -83,10 +83,16 @@ angular.module('rollApp')
       }
 
 
-      //$scope.init = function () {
-      //  $scope.getTodaysEventsByCategory();
-      //}
-      //
-      //$scope.init();
+      $scope.init = function () {
+        $scope.getTodaysEventsByCategory();
+      }
+
+      $scope.init();
+
+      $scope.loadAnotherCategory = function(category){
+            if(category){
+                $state.go("category", {category: category});
+            }
+        }
 
   });

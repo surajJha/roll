@@ -49,7 +49,8 @@ class UserController
         }
         else
         {
-            echo "No Search Results Found";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 
@@ -69,7 +70,8 @@ class UserController
         }
         else
         {
-            echo "There are no existing events.";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 
@@ -91,7 +93,8 @@ class UserController
         }
         else
         {
-            echo "There are no existing events.";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 
@@ -113,7 +116,8 @@ class UserController
         }
         else
         {
-            echo "There are no existing events.";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 
@@ -126,6 +130,10 @@ class UserController
 
         if($result['status'] == 'success')
         {
+            echo json_encode($result['data']);
+        }
+        else{
+            $result['data'] = array();
             echo json_encode($result['data']);
         }
     }
@@ -145,7 +153,8 @@ class UserController
         }
         else
         {
-            echo "No Search Results Found";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 
@@ -164,7 +173,8 @@ class UserController
         }
         else
         {
-            echo "Oops!!! Something went wrong";
+            $result['data'] = array();
+            echo json_encode($result['data']);
         }
     }
 

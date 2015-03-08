@@ -3,28 +3,28 @@
 
         <div class="row" style="margin-top: 15px;">
             <div class="category_type">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="loadAnotherCategory('Food + Drinks')">
                     Food & Drinks
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Comedy')">
                     Comedy
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Music')">
                     Music
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Outdoor')">
                     Outdoor
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Nightlife')">
                     Nightlife
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Festivals')">
                     Festivals
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Culture')">
                     Culture
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Theatre')">
                     Theatre
                 </div>
             </div>
@@ -45,13 +45,12 @@
         </div>
 
         <div class="row">
+            <div class="container">
             <div infinite-scroll='loadMoreCategoryEvent()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
                 <div ng-repeat="i in array_repeat_event">
                     <div class="row grid">
                         <div class="col-lg-4 event" ng-repeat="j in i">
-                            <figure>
-                                <img class="featured-image" src="images/Irish.jpg">
-                            </figure>
+                            <div class="figure"><img class="featured-image" src="images/Irish.jpg"></div>
                             <div class="featured-image-info" style="text-align:center;">
                           <span>
                              <h1>{{formData.event_name[0]}}</h1>
@@ -62,6 +61,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>

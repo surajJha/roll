@@ -104,11 +104,6 @@ body{
 
 /*EVENTS DIV CSS*/
 
-.grid{
-    padding-left: 12%;
-}
-
-
 .grid .darken:hover img {
     opacity: 0.3;
     cursor: pointer;
@@ -120,24 +115,18 @@ body{
 }
 .event{
     cursor: pointer;
+    margin-top: 27px;
+    margin-bottom: 27px;
 }
 
 .darken{
-    margin-top: -53px;
-    margin-right: -4%;
+    cursor: pointer;
+    margin-bottom: 37px;
 }
 
-
-figure {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
-    background: black;
-    height:400px;
-    /*width:70%;*/
+.figure {
+    background-color: black;
 }
-
 
 .featured-image{
     width:100%;
@@ -154,11 +143,9 @@ figure {
 }
 
 .events {
-    /*background: url('../images/bg.png') no-repeat bottom;*/
-    /*background-size: 100% 100%;*/
     font-size:100px;
     text-align:center;
-    background-color: rgba(68, 82, 87, 0.1);
+    /*background-color: rgba(68, 82, 87, 0.1);*/
 }
 
 
@@ -188,10 +175,6 @@ figure {
 }
 
 .cat-container{
-    margin: auto;
-    padding-right: 13%;
-    padding-left: 13%;
-    padding-bottom:50px;
     font-size:100px;
     text-align:center;
 }
@@ -201,11 +184,11 @@ figure {
     position:relative;
     font-family:myFirstFont;
     top:0;
-    left:4%;
+    /*left:4%;*/
     font-size:35px;
     width: 95%;
     height:122px;
-    margin: 9%;
+    margin-bottom: 9%;
     padding: 3%;
     border-radius:10px;
     cursor:pointer;
