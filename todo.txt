@@ -1,1 +1,6 @@
-1. add hover on mouse events for the search results dropdown
+create image folders on remote server and change admin code for upload accordingly
+
+get and save default images for each categories
+
+make login page for admin and make it live ( implement session for each organiser)
+
