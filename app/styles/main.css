@@ -31,7 +31,8 @@ body{
 /*       NAVBAR CSS         */
 .navbar_header{
     height:70px;
-    background:rgba(0,0,0,0.4);
+    background-color: #512DA8;
+    /*background:rgba(0,0,0,0.4);*/
 	z-index:5;
     margin-right: -22px;
 }
@@ -80,6 +81,7 @@ body{
     border-color:#512DA8;
     height: 34px;
 	border-radius:0;
+    padding-top: 2px;
 }
 #members_value, .city_input_search{
     width: 100%;
@@ -148,7 +150,7 @@ body{
     position: absolute;
     width: 70%;
     left: 13%;
-    top: 7%;
+    top: -34%;
     height: 340px;
 }
 
@@ -242,7 +244,7 @@ body{
 }
 .btn-facebook {
     background-color: #3b5998;
-    background-image:url("facebook.jpg");
+    background-image:url("images/facebook.jpg");
     background-size:auto 50px;
     opacity:0.9;
 }
@@ -372,7 +374,7 @@ a.event_type:hover{
 
 .join{
      position:absolute;    
-     top:140px;
+     top:121px;
 	 left:42%;    
      text-align:center;
      
@@ -393,7 +395,7 @@ a.event_type:hover{
 /*horizontal line*/
 
 .hline{
-    margin:left:10%;
+    margin-left:10%;
 	width:80%;
 	height:1px solid #ccc; 
 

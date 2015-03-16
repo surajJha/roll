@@ -120,10 +120,9 @@ angular.module('rollApp')
 
         $scope.init();
 
-        $scope.getEventDetail = function(event_detail_id){
-            console.log(event_detail_id);
-            if(event_detail_id){
-                $state.go("event", {event_detail_id: event_detail_id});
+        $scope.getEventDetail = function(formData){
+            if(formData){
+                $state.go("event", {formData: formData});
             }
         }
 
