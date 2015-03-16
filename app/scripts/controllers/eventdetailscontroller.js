@@ -16,6 +16,14 @@ angular.module('rollApp')
         else{
             $scope.formData = $stateParams.formData;
 
+            console.log($scope.formData);
+
+            var date = $scope.formData.datetime[0][0].date;
+            $scope.formData.datetime[0][0].start_time = $scope.formData.datetime[0][0].start_time.slice(0, 5);
+            $scope.formData.datetime[0][0].end_time = $scope.formData.datetime[0][0].end_time.slice(0, 5);
+            console.log($scope.formData.datetime[0][0].start_time.slice(0, 5));
+
+
             $scope.mapOptions = {
                 center: new google.maps.LatLng(19.121, 72.85),
                 zoom:16,
@@ -41,7 +49,6 @@ angular.module('rollApp')
             };
 
             $scope.init = function(){
-                console.log($stateParams.formData);
                 $scope.codeAddress();
             }
             $scope.init();

@@ -1,115 +1,59 @@
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-        <!--<div class="row navbar_header">-->
-            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">-->
-                <!--<img  src="images/mascot.png" class="logo_header">-->
-                <!--<p class="logo_text_header">Rolling Scenes</p>-->
-            <!--</div>-->
-
-
-            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 nopadding">-->
-                <!--<div class="row">-->
-                    <!--<form class="form-inline" role="form" name="AddShareForm" novalidate ng-controller="homeController" ng-submit="AddShareForm.$valid && submit()" >-->
-                        <!--<div class="form-group col-lg-12">-->
-                            <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">-->
-                                <!--<input type="text" class="form-control input-md city_input_search" placeholder="City" style="width: 100%;">-->
-                            <!--</div>-->
-
-                            <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 no padding">-->
-                                <!--<angucomplete-alt id="members"-->
-                                                  <!--placeholder="Search Here...."-->
-                                                  <!--pause="400"-->
-                                                  <!--selected-object="testObj"-->
-                                                  <!--remote-url="http://localhost/roll/server/userController.php?func=getSearchResults&city=Mumbai&q="-->
-                                                  <!--remote-url-data-field=""-->
-                                                  <!--title-field="area_name"-->
-                                                  <!--description-field="type"-->
-                                                  <!--input-class="form-control form-control-small"/>-->
-                            <!--</div>-->
-                            <!--<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 nopadding">-->
-                                <!--<button class="blue-button btn btn-lg btn-primary btn-block event-search-btn" type="submit" >Search</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--&lt;!&ndash;<input name="location" class="input-search" type="text"  placeholder="Location">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<input name="category" class="input-search" type="text"  placeholder="Category">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<button type="submit" class="blue-button btn btn-lg btn-primary btn-block event-search-btn">Search</button>&ndash;&gt;-->
-                    <!--</form>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <div class="row">
-            <div>
-                <carousel interval="myInterval">
-                  <slide ng-repeat="slide in slides" active="slide.active">
-                      <img ng-src="{{slide.image}}" style="margin: auto;">
-                        <div class="carousel-caption">
-                            <h4>Slide {{$index+1}}</h4>
-                        </div>
-                    </slide>
-                </carousel>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="slide in slides" active="slide.active">
+                            <img ng-src="{{slide.image}}" style="margin: auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{$index+1}}</h4>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
             </div>
+
+            <div class="row" style="color:#999;margin-top:30px;">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
+                    <h2><i class="fa fa-map-marker fa-lg"></i>  Colaba Social, Colaba</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
+                    <h2><i class="fa fa-inr fa-lg"></i> {{formData.event_cost[0]}}</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
+                    <h2><i class="fa fa-calendar fa-lg"></i> {{formData.datetime[0][0].date | date:"dd'th' MMMM"}}</h2>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
+                    <h2><i class="fa fa-clock-o fa-lg"></i> {{formData.datetime[0][0].start_time}}pm-{{formData.datetime[0][0].end_time}}pm</h2>
+                </div>
+            </div>
+            <hr class="event-partition">
+
+
+
+            <div class="row" style="color:#999;margin-top:20px;">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 event-general-details">
+                    <h1 style="color:#512DA8;font-family:myFirstFont;">Event Description</h1>
+                    <p style="font-size:25px;">{{formData.event_overview[0]}}</p>
+                </div>
+            </div>
+
+            <!--=====================MAP GOES HERE=======================-->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <section id="map">
+                        <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
+                    </section>
+
+                </div>
+            </div>
+
         </div>
 
-        <div class="row" style="color:#999;margin-top:30px;">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-                <h2><i class="fa fa-map-marker fa-lg"></i>  Colaba Social, Colaba</h2>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-                <h2><i class="fa fa-inr fa-lg"></i> Free Entry</h2>
-            </div>        
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-               <h2><i class="fa fa-calendar fa-lg"></i> 10th February</h2>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-                <h2><i class="fa fa-clock-o fa-lg"></i> 7pm-10pm</h2>
-            </div>
-         </div>
-         <hr class="event-partition">
-         
-         
-         
-         <div class="row" style="color:#999;margin-top:20px;">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 event-general-details">
-                <h1 style="color:#512DA8;font-family:myFirstFont;">Event Description</h1>
-                <p style="font-size:25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-         </div>
-         
-         
-         
-            <!--<div class="col-md-12">-->
-                <!--<div class="col-md-2 col-md-offset-2" id="grad" style="text-align:center;">-->
 
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-md-offset-1" id="grad" style="text-align:center;margin-left:5px;">-->
-
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-md-offset-1" id="grad" style="text-align:center;margin-left:5px;">-->
-
-                <!--</div>-->
-
-                <!--<div class="col-md-2 col-md-offset-1" id="grad" style="text-align:center;margin-left:5px;">-->
-
-                <!--</div>-->
-
-            <!--</div>-->
         </div>
 
-        <!--=====================MAP GOES HERE=======================-->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <section id="map">
-                    <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
-                </section>
-
-            </div>
-        </div>
     </div>
-</div>
