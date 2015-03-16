@@ -8,11 +8,21 @@
     src: url(SketchRockwell-Bold.ttf);
 }
 
+@font-face {
+    font-family: LogoFont;
+    src: url(MrDafoe-Regular.ttf);
+}
+
 body{
     background-color: white;
-    font-family:myFirstFont;
+    font-family:Calibri;
     z-index:-1;
     color:white;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
 
 .map-canvas {
@@ -20,13 +30,9 @@ body{
 }
 /*       NAVBAR CSS         */
 .navbar_header{
-    background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(#330066,#190033); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(#330066,#190033); /* Standard syntax */
-    height:100px;
-    background:#190033;
-    z-index:5;
+    height:70px;
+    background:rgba(0,0,0,0.4);
+	z-index:5;
     margin-right: -22px;
 }
 
@@ -37,21 +43,21 @@ body{
     /*left: 0;*/
     /*top: 0;*/
     /*z-index: 1;*/
-
-    height: 152px;
+    height: 70px;
     position: absolute;
-    left: 23px;
-    top: 0;
+    left: 3.125%;
+    top: 0px;
     z-index: 1;
 }
 
 .logo_text_header{
     position:absolute;
-    top:90px;
-    left:30%;
-    color:#FFFFFF;
-    font-size:36px;
-    z-index: 2;
+    font-family:LogoFont;
+    top:7px;
+    left:13%;
+    color:white;
+    font-size:40px;
+    z-index: 6;
 }
 
 #input-search{
@@ -65,29 +71,33 @@ body{
 }
 
 .form-inline{
-    margin-top: 27px;
+    margin-top: 15px;
     color: #000000;
 }
 
 .event-search-btn{
-    font-family:myFirstFont;
     font-size:22px;
-    border-color:white;
-    padding:3px;
+    border-color:#512DA8;
     height: 34px;
+	border-radius:0;
 }
 #members_value, .city_input_search{
     width: 100%;
     border-radius: 0;
 }
 
+.btn
+{    background-color:#512DA8;
+}
 .btn:hover{
-    background-color:#290066;
+    background-color:#4527A0;
+    border-color:#4527A0;
 }
 
 /*         FULL MEDIA CSS          */
 
 .img-container{
+    top:-70px;
     display:inline-block;
     width:101%;
     height:600px;
@@ -97,8 +107,8 @@ body{
 }
 
 .form-search-heading{
-    margin-top: 200px;
-    margin-left: 23%;
+    margin-top: 400px;
+    margin-left: 32%;
 }
 
 
@@ -130,7 +140,7 @@ body{
 
 .featured-image{
     width:100%;
-    height:400px;
+    height:340px;
     opacity:1.0;
 }
 
@@ -139,7 +149,7 @@ body{
     width: 70%;
     left: 13%;
     top: 7%;
-    height: 400px;
+    height: 340px;
 }
 
 .events {
@@ -150,32 +160,33 @@ body{
 
 
 .featured-image-info span {
-    top: 100px;
+    top: 190px;
     position: relative;
     width:70%;
-    height:400px;
+    height:340px;
     text-align: center;
     color: white;
 }
 
 .event-heading{
-    color:#190033;
+    margin-top:30px;
+    color:#512DA8;
+	font-family:myFirstFont;
+	font-size:65px;
 }
 
 /*FOOTER CSS*/
 
 #grad {
     text-align:center;
-    height:200px;
-    font-size:40px;
-    background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(#330066,#190033); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(#330066,#190033); /* Standard syntax */
+	background:#512DA8;
+    height:280px;
+    font-size:30px;
 }
 
 .cat-container{
-    font-size:100px;
+    margin:30px;  
+    font-size:65px;
     text-align:center;
 }
 
@@ -212,12 +223,9 @@ body{
 /*Event General Details CSS*/
 .event-general-details {
     text-align:center;
-    height:126px;
+    height:95px;
     font-size:40px;
-    background: -webkit-radial-gradient(#190033,#330066); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(#330066,#190033); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(#330066,#190033); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(#330066,#190033); /* Standard syntax */
+    background: white;
     margin-left:5px;
 }
 
@@ -338,6 +346,7 @@ a.event_type:hover{
 .row{
     margin-left: 0;
     margin-right: 0;
+	color:white;
 }
 
 .selbox,.sel{
@@ -357,4 +366,35 @@ a.event_type:hover{
     background-color:#ccc;
     width: 16%;
     margin-left: 3%;
+}
+
+/*Footer CSS*/
+
+.join{
+     position:absolute;    
+     top:140px;
+	 left:42%;    
+     text-align:center;
+     
+}
+
+.circ{
+  margin-top:5px;  
+  width:50px;
+  height:50px; 
+  border-radius:25px;   
+  border: 1px solid white;
+  text-align:center;
+  padding-top:5px; 
+}
+
+
+
+/*horizontal line*/
+
+.hline{
+    margin:left:10%;
+	width:80%;
+	height:1px solid #ccc; 
+
 }
