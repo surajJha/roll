@@ -33,20 +33,23 @@ angular.module('rollApp')
 
         userTaskFactory.getEventByCategory($stateParams.category, $scope.last_fetched_index, $scope.which_day).then(function(result)
         {
-          console.log(result);
-          if(result == ''){
-            $scope.do_not_scroll = true;
-          }
-          else{
-            $scope.isBusy = false;
-            $scope.formData.event_name[0] = result[0].event_name;
-            var temp_arr= [];
-            for(var i=0; i<result.length; i++){
-              temp_arr.push(i);
+            if(result == ''){
+                $scope.do_not_scroll = true;
+                $scope.no_results_found = true;
+                $scope.results_found = false;
             }
-            for (var i=0; i<temp_arr.length; i+=3) {
-              $scope.array_repeat_event.push(temp_arr.slice(i, i+3));
-            }
+            else{
+                $scope.no_results_found = false;
+                $scope.results_found = true;
+                $scope.isBusy = false;
+                $scope.formData.event_name[0] = result[0].event_name;
+                var temp_arr= [];
+                for(var i=0; i<result.length; i++){
+                  temp_arr.push(i);
+                }
+                for (var i=0; i<temp_arr.length; i+=3) {
+                  $scope.array_repeat_event.push(temp_arr.slice(i, i+3));
+                }
           }
         })
 

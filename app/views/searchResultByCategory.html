@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 70px;">
 
         <div class="row" style="margin-top: 15px;">
             <div class="category_type">
@@ -46,22 +46,30 @@
 
         <div class="row">
             <div class="container">
-            <div infinite-scroll='loadMoreCategoryEvent()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
-                <div ng-repeat="i in array_repeat_event">
-                    <div class="row grid">
-                        <div class="col-lg-4 event" ng-repeat="j in i">
-                            <div class="figure"><img class="featured-image" src="images/Irish.jpg"></div>
-                            <div class="featured-image-info" style="text-align:center;">
-                          <span>
-                             <h1>{{formData.event_name[0]}}</h1>
-                             <h1>(Colaba)</h1>
-                             <h2>The Happiest Hours</h2>
-                          </span>
+                <div ng-if="results_found == true">
+                    <div infinite-scroll='loadMoreCategoryEvent()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
+                        <div ng-repeat="i in array_repeat_event">
+                            <div class="row grid">
+                                <div class="col-lg-4 event" ng-repeat="j in i">
+                                    <div class="figure"><img class="featured-image" src="images/Irish.jpg"></div>
+                                    <div class="featured-image-info" style="text-align:center;">
+                                  <span>
+                                     <h1>{{formData.event_name[0]}}</h1>
+                                     <h1>(Colaba)</h1>
+                                     <h2>The Happiest Hours</h2>
+                                  </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <div ng-if="no_results_found == true">
+                    <div class="row no_results_div">
+                        <span>No Events Found</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

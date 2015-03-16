@@ -42,8 +42,12 @@ angular.module('rollApp')
 
                 if(result == ''){
                     $scope.do_not_scroll = true;
+                    $scope.no_results_found = true;
+                    $scope.results_found = false;
                 }
                 else{
+                    $scope.no_results_found = false;
+                    $scope.results_found = true;
                     for(var i=0; i< result.length; i++){
                         $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                         $scope.formData.event_name[i] = result[i].event_name;
@@ -120,10 +124,9 @@ angular.module('rollApp')
 
         $scope.init();
 
-        $scope.getEventDetail = function(event_detail_id){
-            console.log(event_detail_id);
-            if(event_detail_id){
-                $state.go("event", {event_detail_id: event_detail_id});
+        $scope.getEventDetail = function(formData){
+            if(formData){
+                $state.go("event", {formData: formData});
             }
         }
 
