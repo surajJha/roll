@@ -281,6 +281,7 @@ body{
 .angucomplete-row:hover {
     background-color: lightblue;
     color: #000000;
+    cursor: pointer;
 }
 .angucomplete-row:active {
     background-color: lightblue;
@@ -346,7 +347,7 @@ a.event_type:hover{
     margin-left: 20%;
 }
 
-.selectbox:hover{
+.selectbox:hover, .selectedDay{
     background-color:#ccc;
 }
 
@@ -370,7 +371,7 @@ a.event_type:hover{
     background-color:#ccc;
 }
 .sel{
-    background-color:#ccc;
+    /*background-color:#ccc;*/
     width: 16%;
     margin-left: 3%;
 }
@@ -413,4 +414,8 @@ a.event_type:hover{
 	width:80%;
 	height:1px solid #ccc; 
 
+}
+
+.selected{
+    background-color: #ccc;
 }

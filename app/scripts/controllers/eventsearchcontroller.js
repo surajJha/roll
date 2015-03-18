@@ -33,6 +33,7 @@ angular.module('rollApp')
         $scope.array_repeat_event = [];
         $scope.loop_counter = 0;
         $scope.which_day = "today";
+        $scope.selectedCategory = $stateParams.category;
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;

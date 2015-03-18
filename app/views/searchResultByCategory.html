@@ -3,28 +3,28 @@
 
         <div class="row" style="margin-top: 15px;">
             <div class="category_type">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="loadAnotherCategory('Food + Drinks')">
+                <div ng-class="{selected: selectedCategory == 'Food + Drinks'}" class="col-lg-4 col-md-4 col-sm-4 col-ls-4 sel" ng-click="loadAnotherCategory('Food + Drinks')">
                     Food & Drinks
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Comedy')">
+                <div ng-class="{selected: selectedCategory == 'Comedy'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Comedy')">
                     Comedy
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Music')">
+                <div ng-class="{selected: selectedCategory == 'Music'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Music')">
                     Music
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Outdoor')">
+                <div ng-class="{selected: selectedCategory == 'Outdoor'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Outdoor')">
                     Outdoor
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Nightlife')">
+                <div ng-class="{selected: selectedCategory == 'Nightlife'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Nightlife')">
                     Nightlife
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Festivals')">
+                <div ng-class="{selected: selectedCategory == 'Festivals'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Festivals')">
                     Festivals
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Culture')">
+                <div ng-class="{selected: selectedCategory == 'Culture'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Culture')">
                     Culture
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Theatre')">
+                <div ng-class="{selected: selectedCategory == 'Theatre'}" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 selbox" ng-click="loadAnotherCategory('Theatre')">
                     Theatre
                 </div>
             </div>
@@ -32,13 +32,13 @@
 
         <div class="row">
             <div class="schedule_type">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox" id="today">
+                <div ng-class="{selectedDay: which_day == 'today'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox" id="today">
                     <a class="event_type" ng-click="getTodaysEventsByCategory()">Today</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
+                <div ng-class="{selectedDay: which_day == 'tomorrow'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
                     <a class="event_type" ng-click="getTomorrowsEventsByCategory()">Tomorrow</a>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
+                <div ng-class="{selectedDay: which_day == 'later'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
                     <a class="event_type" ng-click="getLatersEventsByCategory()">Later</a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 
         <div class="row">
             <div class="container">
-                <div ng-if="results_found == true">
+                <!--<div ng-if="results_found == true">-->
                     <div infinite-scroll='loadMoreCategoryEvent()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
                         <div ng-repeat="i in array_repeat_event">
                             <div class="row grid">
@@ -62,14 +62,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <!--</div>-->
                 </div>
 
-                <div ng-if="no_results_found == true">
-                    <div class="row no_results_div">
-                        <span>No Events Found</span>
-                    </div>
-                </div>
+                <!--<div ng-if="no_results_found == true">-->
+                    <!--<div class="row no_results_div">-->
+                        <!--<span>No Events Found</span>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </div>

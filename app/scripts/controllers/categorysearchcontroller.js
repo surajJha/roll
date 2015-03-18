@@ -15,6 +15,7 @@ angular.module('rollApp')
       $scope.loop_counter = 0;
       $scope.which_day = "today";
       $scope.isBusy = false;
+      $scope.selectedCategory = $stateParams.category;
 
       $scope.formData={};
       $scope.formData.event_name = [];
