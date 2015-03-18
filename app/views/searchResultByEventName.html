@@ -45,7 +45,7 @@
 
         <div class="row">
             <div class="container">
-                <!--<div ng-if="results_found == true">-->
+                <div ng-if="results_found == true">
                     <div infinite-scroll='loadMore()' infinite-scroll-disabled='do_not_scroll' infinite-scroll-distance='2'>
                         <div ng-repeat="i in array_repeat_event">
                             <div class="row grid">
@@ -62,14 +62,14 @@
                                 </div>
                             </div>
                         </div>
-                    <!--</div>-->
+                    </div>
                 </div>
 
-                <!--<div ng-if="no_results_found == true">-->
-                    <!--<div class="row no_results_div">-->
-                        <!--<span>No Events Found</span>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div ng-if="no_results_found == true">
+                    <div class="row no_results_div">
+                        <span>No Events Found</span>
+                    </div>
+                </div>
 
             </div>
         </div>

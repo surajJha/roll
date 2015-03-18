@@ -34,6 +34,7 @@ angular.module('rollApp')
         $scope.loop_counter = 0;
         $scope.which_day = "today";
         $scope.selectedCategory = $stateParams.category;
+        $scope.ifAtleastOnceResultWasFound = true;
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
@@ -43,12 +44,15 @@ angular.module('rollApp')
 
                 if(result == ''){
                     $scope.do_not_scroll = true;
-                    $scope.no_results_found = true;
-                    $scope.results_found = false;
+                    if($scope.ifAtleastOnceResultWasFound){
+                        $scope.no_results_found = true;
+                        $scope.results_found = false;
+                    }
                 }
                 else{
                     $scope.no_results_found = false;
                     $scope.results_found = true;
+                    $scope.ifAtleastOnceResultWasFound = false;
                     for(var i=0; i< result.length; i++){
                         $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                         $scope.formData.event_name[i] = result[i].event_name;

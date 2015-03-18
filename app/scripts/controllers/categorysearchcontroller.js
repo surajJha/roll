@@ -16,6 +16,7 @@ angular.module('rollApp')
       $scope.which_day = "today";
       $scope.isBusy = false;
       $scope.selectedCategory = $stateParams.category;
+      $scope.ifAtleastOnceResultWasFound = true;
 
       $scope.formData={};
       $scope.formData.event_name = [];
@@ -36,13 +37,16 @@ angular.module('rollApp')
         {
             if(result == ''){
                 $scope.do_not_scroll = true;
-                $scope.no_results_found = true;
-                $scope.results_found = false;
+                if($scope.ifAtleastOnceResultWasFound){
+                    $scope.no_results_found = true;
+                    $scope.results_found = false;
+                }
             }
             else{
                 $scope.no_results_found = false;
                 $scope.results_found = true;
                 $scope.isBusy = false;
+                $scope.ifAtleastOnceResultWasFound = false;
                 $scope.formData.event_name[0] = result[0].event_name;
                 var temp_arr= [];
                 for(var i=0; i<result.length; i++){
