@@ -66,6 +66,32 @@ angular.module('rollApp')
             return defer.promise;
         }
 
+        /**
+         * Takes as input the event_detail_id
+         * and returns the event detail.
+         * @param event_detail_id
+         * @returns {jQuery.promise|promise.promise|d.promise|promise|.ready.promise|jQuery.ready.promise}
+         */
+        factory.getEventDetail = function(event_detail_id){
+            var defer = $q.defer();
+
+            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventDetail&event_detail_id='+event_detail_id)
+                .success(function(res){
+                    defer.resolve(res);
+                })
+                .error(function (err, status) {
+                    defer.reject(err);
+                })
+
+            return defer.promise;
+        }
+
+        /* Takes as input as the image path
+        * and returns the resized image of
+        * size 350x340
+        *  @param path
+        */
+
         factory.loadImages = function(path) {
             var defer = $q.defer();
             $http.get($rootScope.baseUrl + '/server/resize350x340.php?imgpath='+path)

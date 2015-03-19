@@ -21,4 +21,10 @@ angular.module('rollApp')
             }
         }
 
+        $scope.getEventDetailById = function(event_id){
+            if(event_id){
+                $state.go("event", {formData: event_id});
+            }
+        }
+
     });

@@ -19,13 +19,13 @@
                     <h2><i class="fa fa-map-marker fa-lg"></i>  Colaba Social, Colaba</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-inr fa-lg"></i> {{formData.event_cost[0]}}</h2>
+                    <h2><i class="fa fa-inr fa-lg"></i> {{formData.event_cost}}</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-calendar fa-lg"></i> {{formData.datetime[0][0].date | date:"dd'th' MMMM"}}</h2>
+                    <h2><i class="fa fa-calendar fa-lg"></i> {{formData.datetime[0].date | date:"dd'th' MMMM"}}</h2>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-clock-o fa-lg"></i> {{formData.datetime[0][0].start_time}}pm-{{formData.datetime[0][0].end_time}}pm</h2>
+                    <h2><i class="fa fa-clock-o fa-lg"></i> {{formData.datetime[0].start_time}}pm-{{formData.datetime[0].end_time}}pm</h2>
                 </div>
             </div>
             <hr class="event-partition">

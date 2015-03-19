@@ -8,21 +8,42 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-  .controller('EventDetailsController', function ($scope, $stateParams,userTaskFactory, $state) {
+  .controller('EventDetailsController', function ($scope, $stateParams, userTaskFactory, $state) {
 
         if($stateParams.formData == '' || $stateParams.formData == null){
             $state.go('home');
         }
         else{
-            $scope.formData = $stateParams.formData;
 
-            console.log($scope.formData);
+            $scope.eventdata = $stateParams.formData;
 
-            var date = $scope.formData.datetime[0][0].date;
-            $scope.formData.datetime[0][0].start_time = $scope.formData.datetime[0][0].start_time.slice(0, 5);
-            $scope.formData.datetime[0][0].end_time = $scope.formData.datetime[0][0].end_time.slice(0, 5);
-            console.log($scope.formData.datetime[0][0].start_time.slice(0, 5));
+            if($stateParams.id != null){
+                $scope.id = $stateParams.id;
+            }
 
+            $scope.formData = {};
+            $scope.formData.event_name = '';
+            $scope.formData.event_category = '';
+            $scope.formData.event_cost = '';
+            $scope.formData.event_overview = '';
+            $scope.formData.event_hashtags = '';
+            $scope.formData.venue_name = '';
+            $scope.formData.event_area = '';
+            $scope.formData.event_city = '';
+            $scope.formData.event_location = '';
+            $scope.formData.image = '';
+            $scope.formData.datetime = '';
+            $scope.formData.result_length = '';
+            $scope.formData.no_of_days = '';
+
+            $scope.encoded_image_path_array = '';
+
+
+
+            /* All the function body goes first
+            * that is before the call otherwise
+            * it causes error
+            */
 
             $scope.mapOptions = {
                 center: new google.maps.LatLng(19.121, 72.85),
@@ -33,8 +54,7 @@ angular.module('rollApp')
 
             $scope.codeAddress = function(){
                 var geocoder = new google.maps.Geocoder();
-                //var address = $scope.address;
-                var address = String($scope.formData.event_area);
+                var address = String($scope.formData.event_area[0]);
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         $scope.myMap.setCenter(results[0].geometry.location);
@@ -51,7 +71,53 @@ angular.module('rollApp')
             $scope.init = function(){
                 $scope.codeAddress();
             }
-            $scope.init();
+
+            $scope.eventDetailTemplating = function(formData){
+                $scope.init();
+                var date = formData.datetime[0].date;
+                $scope.formData.datetime[0].start_time = formData.datetime[0].start_time.slice(0, 5);
+                $scope.formData.datetime[0].end_time = formData.datetime[0].end_time.slice(0, 5);
+            }
+
+
+
+            if(angular.isNumber($scope.eventdata)){
+
+                userTaskFactory.getEventDetail($scope.eventdata).then(function(result)
+                {
+                    $scope.formData.event_name = result[0].event_name;
+                    $scope.formData.event_category = result[0].category_name;
+                    $scope.formData.event_cost = result[0].event_cost;
+                    $scope.formData.event_overview = result[0].event_overview;
+                    $scope.formData.event_hashtags = result[0].event_hashtags;
+                    $scope.formData.venue_name = result[0].venue_name;
+                    $scope.formData.event_area = result[0].event_area;
+                    $scope.formData.event_city = result[0].event_city;
+                    $scope.formData.event_location = result[0].event_location;
+                    $scope.formData.image = result[0].image;
+                    $scope.formData.datetime = result[0].datetime;
+                    $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
+
+                    $scope.eventDetailTemplating($scope.formData);
+
+                })
+            }
+            else{
+                $scope.formData.event_name = $scope.eventdata.event_name[$scope.id];
+                $scope.formData.event_category = $scope.eventdata.event_category[$scope.id];
+                $scope.formData.event_cost = $scope.eventdata.event_cost[$scope.id];
+                $scope.formData.event_overview = $scope.eventdata.event_overview[$scope.id];
+                $scope.formData.event_hashtags = $scope.eventdata.event_hashtags[$scope.id];
+                $scope.formData.venue_name = $scope.eventdata.venue_name[$scope.id];
+                $scope.formData.event_area = $scope.eventdata.event_area[$scope.id];
+                $scope.formData.event_city = $scope.eventdata.event_city[$scope.id];
+                $scope.formData.event_location = $scope.eventdata.event_location[$scope.id];
+                $scope.formData.image = $scope.eventdata.image[$scope.id];
+                $scope.formData.datetime = $scope.eventdata.datetime[$scope.id];
+                $scope.formData.no_of_days = $scope.eventdata.no_of_days[$scope.id];
+
+                $scope.eventDetailTemplating($scope.formData);
+            }
         }
 
         $scope.myInterval = 3000;

@@ -158,6 +158,23 @@ class UserController
         }
     }
 
+    public function getEventDetail(){
+        $event_detail_id = $this->custom_filter_input($_GET['event_detail_id']);
+
+        $model = new UserModel();
+        $result = $model->getEventDetail($event_detail_id);
+
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            $result['data'] = array();
+            echo json_encode($result['data']);
+        }
+    }
+
 
     function custom_filter_input($data)
     {

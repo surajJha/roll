@@ -392,8 +392,6 @@ class UserModel
             }
         }
 
-
-
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -469,6 +467,94 @@ class UserModel
 
         }
 
+    }
+
+    /**
+     * This function takes organiser_id as input and based on this it fires a SELECT query to
+     * fetch data of all the events belonging to the particular Organiser.
+     * The date and time is stored as arrays in an outer array. Same is done for storing the
+     * Image URL's.Thus the entire result is sent back as a multidimensional array.
+     */
+
+    public function getEventDetail($event_detail_id)
+    {
+        $db = $this->getDatabaseObject();
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.viewer_count, ed.priority_count, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and ed.event_detail_id = '{$event_detail_id}'";
+
+        $temp = $db->query($query);
+        $result =array();
+        if($temp->num_rows>0)
+        {
+            $i = 0;
+            while($row = $temp->fetch_assoc())
+            {
+                $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['event_area'] = $row['area_name'];
+                $rows[$i]['event_city'] = $row['city_name'];
+                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_location'] = $row['event_location'];
+                $rows[$i]['event_name'] = $row['event_name'];
+                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['datetime'] = array();
+                $rows[$i]['image'] = array();
+                $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
+                if($row['schedule'])
+                {
+                    $temp_date_array = explode(',',$row['schedule']);
+                    $y = array();
+                    foreach ($temp_date_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['date'] = $y[0];
+                        $z['start_time'] = $y[1];
+                        $z['end_time'] = $y[2];
+                        array_push($rows[$i]['datetime'] , $z);
+                    }
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Schedule not fetched properly';
+                    return $result;
+                }
+
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                    $i++;
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
+                    return $result;
+                }
+            }
+
+            $result['status'] = 'success';
+            $result['message'] = 'Event Details successfully fetched';
+            $result['data'] = $rows;
+            return $result;
+        }
+        else {
+            $result['status'] = "failure";
+            $result['message'] = 'No Events Found';
+            $result['data'] = '';
+            return $result;
+
+        }
     }
 
 }
