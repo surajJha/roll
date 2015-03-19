@@ -51,10 +51,10 @@
                             <div class="row grid">
                                 <div class="col-lg-4 event" ng-repeat="j in i" ng-click="getEventDetail(formData)">
 
-                                    <div class="figure"><img class="featured-image" src="images/Irish.jpg"></div>
+                                    <div class="figure"><img class="featured-image" ng-src="{{encoded_image_path_array[j]}}"></div>
                                     <div class="featured-image-info" style="text-align:center;">
                                       <span>
-                                         <h1>{{formData.event_name[0]}}</h1>
+                                         <h1>{{formData.event_name[j]}}</h1>
                                          <h1>(Colaba)</h1>
                                          <h2>The Happiest Hours</h2>
                                       </span>
