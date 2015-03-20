@@ -192,6 +192,9 @@ body{
     height:280px;
     font-size:30px;
 }
+.footer{
+    background:#512DA8;
+}
 
 .cat-container{
     margin:30px;  
@@ -235,33 +238,6 @@ body{
     height:95px;
     font-size:40px;
     background: white;
-}
-
-/*TUSHAR'S STYLING*/
-
-/*social buttons*/
-.btn-social{
-    color: white;
-    opacity:0.9;
-}
-.btn-social:hover {
-    color: white;
-    opacity:1;
-}
-.btn-facebook {
-    background-color: #3b5998;
-    background-image:url("images/facebook.jpg");
-    background-size:auto 50px;
-    opacity:0.9;
-}
-.btn-twitter {
-    background-color: #00aced;
-    opacity:0.9;
-}
-
-.btn-google {
-    background-color: #c32f10;
-    opacity: 0.9;
 }
 
 /*========search field styling=====*/
@@ -389,14 +365,13 @@ a.event_type:hover{
 /*Footer CSS*/
 
 .join{
-     position:absolute;    
+     position:absolute;
      top:121px;
-	 left:42%;    
+	 left:36%;
      text-align:center;
-     
 }
 
-.circ{
+.social-circle{
   margin-top:5px;  
   width:50px;
   height:50px; 
@@ -406,15 +381,40 @@ a.event_type:hover{
   padding-top:5px; 
 }
 
+.footer-details{
+    position:absolute;
+    top:20px;
+    font-size:20px;
+    left:25%
+}
 
+.logo_footer{
+    margin-top: 5px;
+    height: 70px;
+    z-index: 1;
+}
+
+.logo_text_footer{
+    font-family:LogoFont;
+    color:white;
+    font-size:40px;
+    z-index: 6;
+}
+.fa-facebook, .fa-twitter, .fa-instagram, .fa-google-plus{
+    cursor: pointer;
+}
+
+.google-plus-circle:hover, .instagram-circle:hover, .twitter-circle:hover, .facebook-circle:hover{
+    background-color: #000066;
+    border: 2px solid white;
+}
 
 /*horizontal line*/
 
 .hline{
     margin-left:10%;
 	width:80%;
-	height:1px solid #ccc; 
-
+	height:1px solid #ccc;
 }
 
 .selected{
