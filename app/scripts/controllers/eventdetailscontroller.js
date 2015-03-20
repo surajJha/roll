@@ -63,7 +63,7 @@ angular.module('rollApp')
                             position: results[0].geometry.location
                         });
                     } else {
-                        alert("Geocode was not successful for the following reason: " + status);
+                        alert("Sorry, we could not locate the place on the map.");
                     }
                 });
             };
@@ -73,7 +73,7 @@ angular.module('rollApp')
             }
 
             $scope.eventDetailTemplating = function(formData){
-                $scope.init();
+                $scope.codeAddress();
                 var date = formData.datetime[0].date;
                 $scope.formData.datetime[0].start_time = formData.datetime[0].start_time.slice(0, 5);
                 $scope.formData.datetime[0].end_time = formData.datetime[0].end_time.slice(0, 5);
@@ -82,7 +82,7 @@ angular.module('rollApp')
 
 
             if(angular.isNumber($scope.eventdata)){
-
+                // user coming from the home page via featured events
                 userTaskFactory.getEventDetail($scope.eventdata).then(function(result)
                 {
                     $scope.formData.event_name = result[0].event_name;
@@ -97,12 +97,12 @@ angular.module('rollApp')
                     $scope.formData.image = result[0].image;
                     $scope.formData.datetime = result[0].datetime;
                     $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
-
                     $scope.eventDetailTemplating($scope.formData);
 
                 })
             }
             else{
+                // user coming from the search results page
                 $scope.formData.event_name = $scope.eventdata.event_name[$scope.id];
                 $scope.formData.event_category = $scope.eventdata.event_category[$scope.id];
                 $scope.formData.event_cost = $scope.eventdata.event_cost[$scope.id];
@@ -115,24 +115,23 @@ angular.module('rollApp')
                 $scope.formData.image = $scope.eventdata.image[$scope.id];
                 $scope.formData.datetime = $scope.eventdata.datetime[$scope.id];
                 $scope.formData.no_of_days = $scope.eventdata.no_of_days[$scope.id];
-
                 $scope.eventDetailTemplating($scope.formData);
             }
         }
 
-        $scope.myInterval = 3000;
-        $scope.slides = [
-            {
-                image: 'http://lorempixel.com/1000/400/'
-            }
-            //,
-            //{
-            //    image: 'http://lorempixel.com/1000/400/food'
-            //},
-            //{
-            //    image: 'http://lorempixel.com/1000/400/sports'
-            //}
-        ];
+        //$scope.myInterval = 3000;
+        //$scope.slides = [
+        //    {
+        //        image: 'http://lorempixel.com/1000/400/'
+        //    }
+        //    //,
+        //    //{
+        //    //    image: 'http://lorempixel.com/1000/400/food'
+        //    //},
+        //    //{
+        //    //    image: 'http://lorempixel.com/1000/400/sports'
+        //    //}
+        //];
 
 
   });

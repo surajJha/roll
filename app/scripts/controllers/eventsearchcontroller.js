@@ -34,26 +34,18 @@ angular.module('rollApp')
         $scope.loop_counter = 0;
         $scope.which_day = "today";
         $scope.selectedCategory = $stateParams.category;
-        $scope.ifAtleastOnceResultWasFound = true;
+        $scope.NoResultFound = true;
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
             userTaskFactory.getEventBySearch($stateParams.query, $stateParams.type, $scope.last_fetched_index, $scope.which_day).then(function(result)
             {
-               // console.log(result[0].event_name);
-
                 if(result == ''){
                     $scope.do_not_scroll = true;
-                    if($scope.ifAtleastOnceResultWasFound){
-                        $scope.no_results_found = true;
-                        $scope.results_found = false;
-                    }
                 }
                 else{
                     var k = -1;
-                    $scope.no_results_found = false;
-                    $scope.results_found = true;
-                    $scope.ifAtleastOnceResultWasFound = false;
+                    $scope.NoResultFound = false;
                     for(var i=0; i< result.length; i++){
                         $scope.formData.event_detail_id[i] = result[i].event_detail_id;
                         $scope.formData.event_name[i] = result[i].event_name;
@@ -102,6 +94,7 @@ angular.module('rollApp')
         };
 
         $scope.getTodaysEventsBySearch = function(){
+            $scope.NoResultFound = true;
             $scope.which_day = "today";
             $scope.last_fetched_index = -3;
             $scope.do_not_scroll = false;
@@ -112,6 +105,7 @@ angular.module('rollApp')
         }
 
         $scope.getTomorrowsEventsBySearch = function(){
+            $scope.NoResultFound = true;
             $scope.which_day = "tomorrow";
             $scope.last_fetched_index = -3;
             $scope.do_not_scroll = false;
@@ -122,6 +116,7 @@ angular.module('rollApp')
         }
 
         $scope.getLatersEventsBySearch = function(){
+            $scope.NoResultFound = true;
             $scope.which_day = "later";
             $scope.last_fetched_index = -3;
             $scope.do_not_scroll = false;

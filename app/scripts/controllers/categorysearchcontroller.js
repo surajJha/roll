@@ -35,7 +35,7 @@ angular.module('rollApp')
       $scope.which_day = "today";
       $scope.isBusy = false;
       $scope.selectedCategory = $stateParams.category;
-      $scope.ifAtleastOnceResultWasFound = true;
+      $scope.NoResultFound = true;
 
       $scope.loadMoreCategoryEvent = function() {
 
@@ -44,7 +44,7 @@ angular.module('rollApp')
               return;
           }
 
-        if($scope.isBusy) return; // request in progress, return
+        //if($scope.isBusy) return; // request in progress, return
 
         $scope.isBusy = true;
         $scope.last_fetched_index+=3;
@@ -53,16 +53,16 @@ angular.module('rollApp')
         {
             if(result == ''){
                 $scope.do_not_scroll = true;
-                if($scope.ifAtleastOnceResultWasFound){
-                    $scope.no_results_found = true;
-                    $scope.results_found = false;
-                }
+                //if($scope.NoResultFound){
+                //    $scope.no_results_found = true;
+                //    $scope.results_found = false;
+                //}
             }
             else{
-                $scope.no_results_found = false;
-                $scope.results_found = true;
+                //$scope.no_results_found = false;
+                //$scope.results_found = true;
                 $scope.isBusy = false;
-                $scope.ifAtleastOnceResultWasFound = false;
+                $scope.NoResultFound = false;
 
                 for(var i=0; i< result.length; i++){
                     $scope.formData.event_detail_id[i] = result[i].event_detail_id;
@@ -108,6 +108,7 @@ angular.module('rollApp')
       };
 
       $scope.getTodaysEventsByCategory = function(){
+        $scope.NoResultFound = true;
         $scope.which_day = "today";
         $scope.last_fetched_index = -3;
         $scope.do_not_scroll = false;
@@ -118,6 +119,7 @@ angular.module('rollApp')
       }
 
       $scope.getTomorrowsEventsByCategory = function(){
+        $scope.NoResultFound = true;
         $scope.which_day = "tomorrow";
         $scope.last_fetched_index = -3;
         $scope.do_not_scroll = false;
@@ -128,6 +130,7 @@ angular.module('rollApp')
       }
 
       $scope.getLatersEventsByCategory = function(){
+        $scope.NoResultFound = true;
         $scope.which_day = "later";
         $scope.last_fetched_index = -3;
         $scope.do_not_scroll = false;
