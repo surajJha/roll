@@ -177,6 +177,7 @@ body{
     height:340px;
     text-align: center;
     color: white;
+    font-weight: bold;
 }
 
 .event-heading{
@@ -290,7 +291,7 @@ body{
     width: 100%;
 }
 hr.event-partition {
-    margin: 0px;
+    margin: 0;
     height: 7px;
     border: 0;
     box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
