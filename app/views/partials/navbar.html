@@ -1,7 +1,7 @@
 <div class="row navbar_header">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <img  src="images/mascot.png" class="logo_header">
-        <p class="logo_text_header">Rolling Scenes</p>
+        <img  src="images/mascot.png" class="logo_header" ng-click="goToHome()">
+        <p class="logo_text_header" ng-click="goToHome()">Rolling Scenes</p>
     </div>
 
 
@@ -9,9 +9,18 @@
         <div class="row">
             <form class="form-inline" role="form" name="AddShareForm" novalidate ng-controller="homeController" ng-submit="AddShareForm.$valid && submit()" >
                 <div class="form-group col-lg-12">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding">
-                        <input type="text" class="form-control input-md city_input_search" placeholder="City" style="width: 100%;">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding input-group add-on" style="float: left;">
+                        <div class="input-group-btn location-div">
+                            <button class="btn btn-default location-button" ng-disabled="true" style="background-color: #eee;"><i class="glyphicon glyphicon-map-marker"></i></button>
+                        </div>
+                        <input type="text" class="form-control input-md city_input_search" placeholder="City" style="width: 100%;" ng-model="city" ng-disabled="true">
+
                     </div>
+                    <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 nopadding input-group">-->
+                        <!--<span class="fa fa-map-marker input-group-addon"></span>-->
+                        <!--<input type="text" class="form-control input-md city_input_search" placeholder="City" style="width: 100%;" ng-model="city" ng-disabled="true">-->
+
+                    <!--</div>-->
 
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 no padding">
                         <angucomplete-alt id="members"

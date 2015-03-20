@@ -9,6 +9,13 @@
  */
 angular.module('rollApp')
     .controller('homeController', function ($scope, $state, $location, $rootScope, $http, userTaskFactory) {
+        $scope.city = "Mumbai";
+
+        $scope.goToHome = function(){
+            console.log("go to home");
+            $state.go("home");
+        }
+
         $scope.submit = function() {
             if($scope.testObj){
                 $state.go("events", {type: $scope.testObj.description, query: $scope.testObj.title});

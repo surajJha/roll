@@ -92,6 +92,10 @@ body{
     border-radius: 0;
 }
 
+.city_input_search{
+    border-left: 0px;
+}
+
 .btn
 {    background-color:#512DA8;
 }
@@ -400,13 +404,20 @@ a.event_type:hover{
     font-size:40px;
     z-index: 6;
 }
-.fa-facebook, .fa-twitter, .fa-instagram, .fa-google-plus{
-    cursor: pointer;
+.fa-facebook, .fa-twitter, .fa-instagram, .fa-linkedin{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.fa-facebook:hover, .fa-twitter:hover, .fa-instagram:hover, .fa-linkedin:hover{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .google-plus-circle:hover, .instagram-circle:hover, .twitter-circle:hover, .facebook-circle:hover{
     background-color: #000066;
     border: 2px solid white;
+    cursor: pointer;
 }
 
 /*horizontal line*/
@@ -419,4 +430,13 @@ a.event_type:hover{
 
 .selected{
     background-color: #ccc;
+}
+
+.location-div{
+    background-color: #eee;
+    border: none;
+}
+
+.location-button{
+    border-right: 0px;
 }
