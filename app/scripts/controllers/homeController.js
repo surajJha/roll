@@ -8,7 +8,9 @@
  * Controller of the rollApp
  */
 angular.module('rollApp')
-    .controller('homeController', function ($scope, $state, $location, $rootScope, $http, userTaskFactory) {
+    .controller('homeController', function ($scope, $state, $location, $rootScope, $http, userTaskFactory,$sce) {
+
+      //  $sce.trustAsResourceUrl('http://www.rollingscenes.com');
         $scope.city = "Mumbai";
 
         $scope.goToHome = function(){

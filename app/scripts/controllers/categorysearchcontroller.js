@@ -81,18 +81,18 @@ angular.module('rollApp')
                     $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
 
 
-                    for(var j = 0;j<$scope.formData.image[i].length;j++){
-                        if($scope.formData.image[i][j].primary == 1) {
-                            k++;
-                            (function(j_alias,k){
-                                userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
-                                    $scope.encoded_image_path_array[k] = result;
-
-                                })
-                            }(j,k))
-                        }
-
-                    }
+                    //for(var j = 0;j<$scope.formData.image[i].length;j++){
+                    //    if($scope.formData.image[i][j].primary == 1) {
+                    //        k++;
+                    //        (function(j_alias,k){
+                    //            userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
+                    //                $scope.encoded_image_path_array[k] = result;
+                    //
+                    //            })
+                    //        }(j,k))
+                    //    }
+                    //
+                    //}
 
                 }
                 var temp_arr= [];
