@@ -44,23 +44,16 @@ angular.module('rollApp')
               return;
           }
 
-        //if($scope.isBusy) return; // request in progress, return
-
-        $scope.isBusy = true;
         $scope.last_fetched_index+=3;
 
         userTaskFactory.getEventByCategory($stateParams.category, $scope.last_fetched_index, $scope.which_day).then(function(result)
         {
+            if($scope.do_not_scroll) return;
+
             if(result == ''){
                 $scope.do_not_scroll = true;
-                //if($scope.NoResultFound){
-                //    $scope.no_results_found = true;
-                //    $scope.results_found = false;
-                //}
             }
             else{
-                //$scope.no_results_found = false;
-                //$scope.results_found = true;
                 $scope.isBusy = false;
                 $scope.NoResultFound = false;
 

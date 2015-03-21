@@ -111,6 +111,7 @@ class UserModel
                     $result['message'] = 'Event Schedule not fetched properly';
                     return $result;
                 }
+                $i++;
             }
 
             $result['status'] = 'success';
