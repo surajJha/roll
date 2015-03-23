@@ -199,7 +199,6 @@ body{
     opacity:0.8;
     text-align:center;
     color:white;
-
 }
 .category:hover{opacity:1.0;}
 
@@ -216,7 +215,6 @@ body{
 /*Event General Details CSS*/
 .event-general-details {
     text-align:center;
-    height:95px;
     font-size:40px;
     background: white;
 }

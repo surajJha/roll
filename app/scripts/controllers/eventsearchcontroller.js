@@ -40,6 +40,8 @@ angular.module('rollApp')
             $scope.last_fetched_index+=3;
             userTaskFactory.getEventBySearch($stateParams.query, $stateParams.type, $scope.last_fetched_index, $scope.which_day).then(function(result)
             {
+                if($scope.do_not_scroll) return;
+
                 if(result == ''){
                     $scope.do_not_scroll = true;
                 }

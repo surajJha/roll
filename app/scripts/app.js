@@ -23,7 +23,8 @@ angular
         'angucomplete-alt',
         'infinite-scroll'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
+       // $sceDelegateProvider.resourceUrlWhitelist(['http://www.rollingscenes.com', 'self']);
         // For any unmatched url, send to /route1
         $urlRouterProvider.otherwise("/home")
         $stateProvider .state('home', {
@@ -58,4 +59,6 @@ angular
          * @type {string}
          */
         $rootScope.baseUrl = 'http://localhost:80/roll'
+       // $rootScope.baseUrl = 'http://www.rollingscenes.com';
+
     })
