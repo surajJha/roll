@@ -5,7 +5,7 @@
  * Date: 28/1/15
  * Time: 12:29 PM
  */
-ini_set('display_errors', '1');
+//ini_set('display_errors', '1');
 include_once 'databaseConnection.php';
 class UserModel
 {
@@ -89,7 +89,7 @@ class UserModel
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
-                $rows[$i]['image'] = $row['image'];
+                $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
                 if($row['schedule'])
                 {
@@ -109,6 +109,25 @@ class UserModel
                 {
                     $result['status'] = 'failure';
                     $result['message'] = 'Event Schedule not fetched properly';
+                    return $result;
+                }
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
                     return $result;
                 }
                 $i++;
@@ -156,7 +175,7 @@ class UserModel
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
-                $rows[$i]['image'] = $row['image'];
+                $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ', $row['event_hashtags']);
                 if ($row['schedule']) {
                     $temp_date_array = explode(',', $row['schedule']);
@@ -174,6 +193,27 @@ class UserModel
                     $result['message'] = 'Event Schedule not fetched properly';
                     return $result;
                 }
+
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
+                    return $result;
+                }
+                $i++;
             }
 
             $result['status'] = 'success';
@@ -217,7 +257,7 @@ class UserModel
                     $rows[$i]['event_overview'] = $row['event_overview'];
                     $rows[$i]['venue_name'] = $row['venue_name'];
                     $rows[$i]['datetime'] = array();
-                    $rows[$i]['image'] = $row['image'];
+                    $rows[$i]['image'] = array();
                     $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
                     if($row['schedule'])
                     {
@@ -239,6 +279,26 @@ class UserModel
                         $result['message'] = 'Event Schedule not fetched properly';
                         return $result;
                     }
+                    if($row['image'])
+                    {
+                        $temp_image_array = explode(',',$row['image']);
+                        $y = array();
+                        foreach ($temp_image_array as $x)
+                        {
+                            $y = explode('=',$x);
+                            $z = array();
+                            $z['image_path'] = $y[0];
+                            $z['primary'] = $y[1];
+                            array_push($rows[$i]['image'] , $z);
+                        }
+                    }
+                    else
+                    {
+                        $result['status'] = 'failure';
+                        $result['message'] = 'Event Image URL\'s not fetched Properly';
+                        return $result;
+                    }
+                    $i++;
                 }
 
                 $result['status'] = 'success';
@@ -285,7 +345,7 @@ class UserModel
                 $rows[$i]['event_overview'] = $row['event_overview'];
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
-                $rows[$i]['image'] = $row['image'];
+                $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
                 if($row['schedule'])
                 {
@@ -307,6 +367,28 @@ class UserModel
                     $result['message'] = 'Event Schedule not fetched properly';
                     return $result;
                 }
+
+                if($row['image'])
+                {
+                    $temp_image_array = explode(',',$row['image']);
+                    $y = array();
+                    foreach ($temp_image_array as $x)
+                    {
+                        $y = explode('=',$x);
+                        $z = array();
+                        $z['image_path'] = $y[0];
+                        $z['primary'] = $y[1];
+                        array_push($rows[$i]['image'] , $z);
+                    }
+                }
+                else
+                {
+                    $result['status'] = 'failure';
+                    $result['message'] = 'Event Image URL\'s not fetched Properly';
+                    return $result;
+                }
+
+                $i++;
             }
 
             $result['status'] = 'success';
@@ -445,7 +527,6 @@ class UserModel
                         $z['primary'] = $y[1];
                         array_push($rows[$i]['image'] , $z);
                     }
-                    $i++;
                 }
                 else
                 {
@@ -453,6 +534,7 @@ class UserModel
                     $result['message'] = 'Event Image URL\'s not fetched Properly';
                     return $result;
                 }
+                $i++;
             }
 
             $result['status'] = 'success';

@@ -66,20 +66,24 @@ angular.module('rollApp')
 
 
                         for(var j = 0;j<$scope.formData.image[i].length;j++){
-                            if($scope.formData.image[i][j].primary == 1) {
-                                k++;
-                                (function(j_alias,k){
-                                    userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
-                                        $scope.encoded_image_path_array[k] = result;
 
-                                    })
-                                }(j,k))
+                            if($scope.formData.image[i][j].primary == 1) {
+
+                                $scope.formData.image[i] = $scope.formData.image[i][j].image_path;
+
+                                //k++;
+                                //(function(j_alias,k){
+                                //    userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
+                                //        $scope.encoded_image_path_array[k] = result;
+                                //
+                                //    })
+                                //}(j,k))
                             }
 
                         }
 
                     }
-                    console.log($scope.formData);
+                 //   console.log($scope.formData);
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
                         temp_arr.push(i);

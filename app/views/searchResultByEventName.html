@@ -50,11 +50,11 @@
                         <div ng-repeat="i in array_repeat_event">
                             <div class="row grid">
                                 <div class="col-lg-4 darken"  ng-repeat="j in i" ng-click="getEventDetail(formData, j)">
-                                    <div class="figure"><img class="featured-image" ng-src="{{encoded_image_path_array[j]}}"></div>
+                                    <div class="figure"><img class="featured-image" ng-src="{{formData.image[j]}}"></div>
                                     <div class="featured-image-info" style="text-align:center;">
                                       <span>
                                          <h2>{{formData.event_name[j]}}</h2>
-                                         <h3>FNB</h3>
+                                         <h3>{{formData.event_category[j]}}</h3>
                                          <h3><i class="fa fa-map-marker fa-lg"></i>   Irish House, Colaba</h3>
                                       </span>
                                     </div>
