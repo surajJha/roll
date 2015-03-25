@@ -3,14 +3,15 @@
         <div class="container">
             <div class="row">
                 <div>
-                    <carousel interval="myInterval">
-                        <slide ng-repeat="slide in slides" active="slide.active">
-                            <img ng-src="{{slide.image}}" style="margin: auto;">
-                            <div class="carousel-caption">
-                                <h4>Slide {{$index+1}}</h4>
-                            </div>
-                        </slide>
-                    </carousel>
+                    <img src="server/{{formData.image}}" class="event-detail-image">
+                    <!--<carousel interval="myInterval">-->
+                    <!--<slide ng-repeat="slide in slides" active="slide.active">-->
+                    <!--<img ng-src="{{slide.image}}" style="margin: auto;">-->
+                    <!--<div class="carousel-caption">-->
+                    <!--<h4>Slide {{$index+1}}</h4>-->
+                    <!--</div>-->
+                    <!--</slide>-->
+                    <!--</carousel>-->
                 </div>
             </div>
 

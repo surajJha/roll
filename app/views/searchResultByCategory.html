@@ -51,7 +51,7 @@
                         <div ng-repeat="i in array_repeat_event">
                             <div class="row grid">
                                 <div class="col-lg-4 darken"  ng-repeat="j in i" ng-click="getEventDetail(formData, j)">
-                                    <div class="figure"><img class="featured-image" ng-src="{{formData.image[j]}}"></div>
+                                    <div class="figure"><img class="featured-image" ng-src="server/{{formData.image[j]}}"></div>
                                     <div class="featured-image-info" style="text-align:center;">
                                       <span>
                                          <h2>{{formData.event_name[j]}}</h2>
