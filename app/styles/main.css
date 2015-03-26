@@ -177,6 +177,16 @@ body{
     height:280px;
     font-size:30px;
 }
+#footer-social{
+    font-size:30px;
+    margin-left: 18%;
+}
+
+.footer-join-text{
+    font-size: 20px;
+    margin-left: 7%;
+}
+
 .footer{
     background:#512DA8;
 }
@@ -279,7 +289,7 @@ hr.event-partition {
     height: 70px;
     font-size: 20px;
     border-bottom: 2px solid #ccc;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
 }
 .selectbox{
     position:relative;
@@ -348,9 +358,9 @@ a.event_type:hover{
 /*Footer CSS*/
 
 .join{
-     position:absolute;
-     top:121px;
-	 left:36%;
+     /*position:absolute;*/
+     /*top:121px;*/
+	 /*left:36%;*/
      text-align:center;
 }
 

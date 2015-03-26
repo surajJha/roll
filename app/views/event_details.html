@@ -16,22 +16,71 @@
             </div>
 
             <div class="row" style="color:#999;margin-top:30px;">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-map-marker fa-lg"></i>{{formData.venue_name}}, {{formData.event_area}}</h2>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 event-general-details">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <h1><i class="fa fa-map-marker fa-lg"></i></h1></div>
+                    <div style="text-align:left;" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <h3>Venue:</h3>
+                    </div>
+                    <div style="text-align:left;" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <h3>{{formData.venue_name}}, {{formData.event_area}}</h3>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-inr fa-lg"></i> {{formData.event_cost}}</h2>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-calendar fa-lg"></i> {{formData.datetime[0].date | date:"dd'th' MMMM"}}</h2>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 event-general-details">
-                    <h2><i class="fa fa-clock-o fa-lg"></i> {{formData.datetime[0].start_time}}pm-{{formData.datetime[0].end_time}}pm</h2>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 event-general-details">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <h1><i class="fa fa-inr fa-lg"></i></h1></div>
+                    <div style="text-align:left;" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <h3>Cost:</h3>
+                    </div>
+                    <div style="text-align:left;" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <h3>{{formData.event_cost}}</h3>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
                 </div>
             </div>
+
+
+            <hr>
+
+
+
+            <div class="row" style="color:#999;margin-top:30px;margin-bottom:30px;">
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 event-general-details">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <h2><i class="fa fa-calendar fa-lg"></i></h2></div>
+                    <div style="text-align:left;" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <h3>Date :</h3>
+                    </div>
+                    <div style="text-align:left;" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div ng-repeat="i in formData.no_of_days">
+                            <h3>{{formData.datetime[i].date | date:"dd'th' MMMM"}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 event-general-details">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        <h1><i class="fa fa-clock-o fa-lg"></i></h1></div>
+                    <div style="text-align:left;" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                        <h3> Time:</h3>
+                    </div>
+                    <div style="text-align:left;" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <div ng-repeat="i in formData.no_of_days">
+                            <h3>{{formData.datetime[i].start_time}}-{{formData.datetime[i].end_time}}</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                </div>
+            </div>
+
             <hr class="event-partition">
-
-
 
             <div class="row" style="color:#999;margin-top:20px;">
                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 event-general-details">
@@ -43,18 +92,18 @@
             </div>
 
             <!--=====================MAP GOES HERE=======================-->
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <section id="map">
-                        <div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>
-                    </section>
+            <!--<div class="row">-->
+                <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                    <!--<section id="map">-->
+                        <!--<div ui-map="myMap" ui-options="mapOptions" class="map-canvas"></div>-->
+                    <!--</section>-->
 
-                </div>
-            </div>
-
-        </div>
-
+                <!--</div>-->
+            <!--</div>-->
 
         </div>
+
 
     </div>
+
+</div>
