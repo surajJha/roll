@@ -14,7 +14,6 @@ angular.module('rollApp')
             $state.go('home');
         }
         else{
-
             $scope.eventdata = $stateParams.formData;
 
             if($stateParams.id != null){
@@ -34,7 +33,7 @@ angular.module('rollApp')
             $scope.formData.image = '';
             $scope.formData.datetime = '';
             $scope.formData.result_length = '';
-            $scope.formData.no_of_days = '';
+            $scope.formData.no_of_days = [];
 
             $scope.encoded_image_path_array = '';
 
@@ -54,7 +53,7 @@ angular.module('rollApp')
 
             $scope.codeAddress = function(){
                 var geocoder = new google.maps.Geocoder();
-                var address = String($scope.formData.event_area);
+                var address = String($scope.formData.event_location);
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         $scope.myMap.setCenter(results[0].geometry.location);
@@ -67,16 +66,27 @@ angular.module('rollApp')
                     }
                 });
             };
-
             $scope.init = function(){
                 $scope.codeAddress();
             }
 
+
             $scope.eventDetailTemplating = function(formData){
                 $scope.codeAddress();
-                var date = formData.datetime[0].date;
-                $scope.formData.datetime[0].start_time = formData.datetime[0].start_time.slice(0, 5);
-                $scope.formData.datetime[0].end_time = formData.datetime[0].end_time.slice(0, 5);
+             //   var date = formData.datetime[0].date;
+                for(var i=0; i<$scope.formData.datetime.length; i++){
+                    $scope.formData.datetime[i].start_time = formData.datetime[i].start_time.slice(0, 5);
+                    $scope.formData.datetime[i].end_time = formData.datetime[i].end_time.slice(0, 5);
+                }
+            }
+
+            //send the length to this function, for eg: 2, 3 etc.
+            $scope.makeArray = function(result){
+                var items = [];
+                for(var i =0;i<result;i++){
+                    items.push(i);
+                }
+                return items;
             }
 
 
@@ -96,7 +106,11 @@ angular.module('rollApp')
                     $scope.formData.event_location = result[0].event_location;
                     $scope.formData.image = result[0].image;
                     $scope.formData.datetime = result[0].datetime;
+                    $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
                     $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
+                    if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
+                        $scope.formData.event_cost = "Free Entry";
+                    }
                     $scope.eventDetailTemplating($scope.formData);
 
                 })
@@ -105,7 +119,6 @@ angular.module('rollApp')
                 // user coming from the search results page
                 $scope.formData.event_name = $scope.eventdata.event_name[$scope.id];
                 $scope.formData.event_category = $scope.eventdata.event_category[$scope.id];
-                $scope.formData.event_cost = $scope.eventdata.event_cost[$scope.id];
                 $scope.formData.event_overview = $scope.eventdata.event_overview[$scope.id];
                 $scope.formData.event_hashtags = $scope.eventdata.event_hashtags[$scope.id];
                 $scope.formData.venue_name = $scope.eventdata.venue_name[$scope.id];
@@ -114,7 +127,11 @@ angular.module('rollApp')
                 $scope.formData.event_location = $scope.eventdata.event_location[$scope.id];
                 $scope.formData.image = $scope.eventdata.image[$scope.id];
                 $scope.formData.datetime = $scope.eventdata.datetime[$scope.id];
-                $scope.formData.no_of_days = $scope.eventdata.no_of_days[$scope.id];
+                $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
+                $scope.formData.event_cost = parseInt($scope.eventdata.event_cost[$scope.id]);
+                if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
+                    $scope.formData.event_cost = "Free Entry";
+                }
                 $scope.eventDetailTemplating($scope.formData);
             }
         }
