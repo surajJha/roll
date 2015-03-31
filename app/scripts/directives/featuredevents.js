@@ -9,7 +9,7 @@
 angular.module('rollApp')
   .directive('featuredevents', function ($rootScope) {
     return {
-      templateUrl: $rootScope.baseUrl+'/app/views/partials/featured_events.html',
+      templateUrl: 'views/partials/featured_events.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
 

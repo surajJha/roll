@@ -9,7 +9,7 @@
 angular.module('rollApp')
     .directive('footer', function ($rootScope) {
         return {
-            templateUrl: $rootScope.baseUrl+'/app/views/partials/footer.html',
+            templateUrl: 'views/partials/footer.html',
             restrict: 'E',
             link: function postLink(scope, element, attrs) {
 
