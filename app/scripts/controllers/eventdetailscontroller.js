@@ -45,23 +45,23 @@ angular.module('rollApp')
             * it causes error
             */
 
-            $scope.initializeMap = function(){
+            $scope.initialize = function(){
                 $scope.mapOptions = {
                     center: new google.maps.LatLng(19.121, 72.85),
                     zoom:15,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                $scope.map = new google.maps.Map(document.getElementById('map'), $scope.mapOptions);
                 $scope.codeAddress();
             }
-            google.maps.event.addDomListener(window, "load", $scope.initializeMap);
+
+           // google.maps.event.addDomListener(window, 'load', $scope.initialize);
 
             $scope.codeAddress = function(){
-
                 var geocoder = new google.maps.Geocoder();
                 var address = String($scope.formData.event_location);
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
+                        $scope.map = new google.maps.Map(document.getElementById('map'), $scope.mapOptions);
                         $scope.map.setCenter(new google.maps.LatLng(parseFloat(results[0].geometry.location.k), parseFloat(results[0].geometry.location.D)));
                         var marker = new google.maps.Marker({
                             map: $scope.map,

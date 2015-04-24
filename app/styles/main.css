@@ -274,6 +274,9 @@ body{
     height: 400px;
     width: 100%;
 }
+#map{
+    height: 500px;
+}
 hr.event-partition {
     margin: 0;
     height: 7px;
