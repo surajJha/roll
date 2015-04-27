@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div style="height: 400px;width: 100%;">
-                    <img src="{{formData.image}}">
+                    <img src="server/{{formData.image}}" style="max-height: 100%; width: 100%;">
                     <!--<carousel interval="myInterval">-->
                     <!--<slide ng-repeat="slide in slides" active="slide.active">-->
                     <!--<img ng-src="{{slide.image}}" style="margin: auto;">-->
@@ -94,7 +94,7 @@
             <!--=====================MAP GOES HERE=======================-->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <section id="map" >
+                    <section id="map">
                         <div ui-map="myMap" ui-options="mapOptions" class="map-canvas" ng-init="initialize()"></div>
                     </section>
 

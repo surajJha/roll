@@ -69,7 +69,7 @@ angular.module('rollApp')
                             position: results[0].geometry.location
                         });
                     } else {
-                        alert("Sorry, we could not locate the place on the map.");
+                        alert("Sorry, we could not locate the place on the map. Please try again");
                     }
                 });
             };
