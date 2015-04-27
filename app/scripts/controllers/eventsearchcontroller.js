@@ -84,14 +84,11 @@ angular.module('rollApp')
                         }
 
                     }
-
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
                         temp_arr.push($scope.counter_for_loadmore+i);
                     }
                     $scope.array_repeat_event.push(temp_arr.slice(0, 3));
-                    console.log($scope.counter_for_loadmore);
-                    console.log($scope.array_repeat_event)
                     //for (var i=0; i<temp_arr.length; i+=3) {
                     //  $scope.array_repeat_event.push(temp_arr.slice(i, i+3));
                     //}

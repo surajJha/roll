@@ -37,6 +37,7 @@ angular.module('rollApp')
 
             $scope.encoded_image_path_array = '';
 
+            $scope.map = '';
 
 
             /* All the function body goes first
@@ -44,21 +45,27 @@ angular.module('rollApp')
             * it causes error
             */
 
-            $scope.mapOptions = {
-                center: new google.maps.LatLng(19.121, 72.85),
-                zoom:15,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            //var map = new google.maps.Map(document.getElementById('myMap'), $scope.mapOptions);
+            $scope.initialize = function(){
+                $scope.mapOptions = {
+                    center: new google.maps.LatLng(19.121, 72.85),
+                    zoom:15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                $scope.map = new google.maps.Map(document.getElementById('map'), $scope.mapOptions);
+                $scope.codeAddress();
+            }
+
+           // google.maps.event.addDomListener(window, 'load', $scope.initialize);
 
             $scope.codeAddress = function(){
                 var geocoder = new google.maps.Geocoder();
                 var address = String($scope.formData.event_location);
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-                        $scope.myMap.setCenter(results[0].geometry.location);
+
+                        $scope.map.setCenter(new google.maps.LatLng(parseFloat(results[0].geometry.location.k), parseFloat(results[0].geometry.location.D)));
                         var marker = new google.maps.Marker({
-                            map: $scope.myMap,
+                            map: $scope.map,
                             position: results[0].geometry.location
                         });
                     } else {
@@ -66,13 +73,10 @@ angular.module('rollApp')
                     }
                 });
             };
-            $scope.init = function(){
-                $scope.codeAddress();
-            }
+
 
 
             $scope.eventDetailTemplating = function(formData){
-                $scope.codeAddress();
              //   var date = formData.datetime[0].date;
                 for(var i=0; i<$scope.formData.datetime.length; i++){
                     $scope.formData.datetime[i].start_time = formData.datetime[i].start_time.slice(0, 5);
