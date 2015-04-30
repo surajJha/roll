@@ -640,5 +640,30 @@ class UserModel
         }
     }
 
+    public function socialUserLogin($username, $primaryEmail, $socialLoginId, $socialLoginService)
+    {
+        $db = $this->getDatabaseObject();
+        $username = (isset($username) && $username!=null )?$db->real_escape_string($username):'';
+        $primaryEmail = (isset($primaryEmail) && $primaryEmail!=null )?$db->real_escape_string($primaryEmail):'';
+        $socialLoginId = (isset($socialLoginId) && $socialLoginId!=null )?$db->real_escape_string($socialLoginId):'';
+        $socialLoginService = (isset($socialLoginService) && $socialLoginService!=null )?$db->real_escape_string($socialLoginService):'';
+
+        $query = "select social_login_id from user_login where social_login_id = '{$socialLoginId}'";
+
+        $temp = $db->query($query);
+        $result = array();
+
+        if($temp->num_rows>0)
+        {
+            $result['status'] = 'failure';
+            $result['message'] = 'Social Login already exists';
+        }
+        else
+        {
+            $query = ""; //write insert query. it is not yet done because chotu and bucket are going to give more description about it
+            $temp = $db->query($query);
+        }
+    }
+
 }
 

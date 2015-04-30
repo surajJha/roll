@@ -175,6 +175,27 @@ class UserController
         }
     }
 
+    public function socialUserLogin(){
+
+        $username = (isset($_GET['username']) && $_GET['username']!=null )?$this->custom_filter_input($_GET['username']):'';
+        $primaryEmail = (isset($_GET['primaryEmail']) && $_GET['primaryEmail']!=null )?$this->custom_filter_input($_GET['primaryEmail']):'';
+        $socialLoginId = (isset($_GET['socialLoginId']) && $_GET['socialLoginId']!=null )?$this->custom_filter_input($_GET['socialLoginId']):'';
+        $socialLoginService = (isset($_GET['socialLoginService']) && $_GET['socialLoginService']!=null )?$this->custom_filter_input($_GET['socialLoginService']):'';
+
+        $model = new UserModel();
+        $result = $model->socialUserLogin($username, $primaryEmail, $socialLoginId, $socialLoginService);
+
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            $result['data'] = array();
+            echo json_encode($result['data']);
+        }
+    }
+
 
     function custom_filter_input($data)
     {
