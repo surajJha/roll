@@ -35,6 +35,7 @@ angular.module('rollApp')
         $scope.which_day = "today";
         $scope.selectedCategory = $stateParams.category;
         $scope.NoResultFound = true;
+        $scope.counter_for_loadmore = 0;
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
@@ -49,49 +50,50 @@ angular.module('rollApp')
                     var k = -1;
                     $scope.NoResultFound = false;
                     for(var i=0; i< result.length; i++){
-                        $scope.formData.event_detail_id[i] = result[i].event_detail_id;
-                        $scope.formData.event_name[i] = result[i].event_name;
-                        $scope.formData.event_category[i] = result[i].category_name;
-                        $scope.formData.event_cost[i] = result[i].event_cost;
-                        $scope.formData.event_overview[i] = result[i].event_overview;
-                        $scope.formData.event_hashtags[i] = result[i].event_hashtags;
-                        $scope.formData.venue_name[i] = result[i].venue_name;
-                        $scope.formData.event_area[i] = result[i].event_area;
-                        $scope.formData.event_city[i] = result[i].event_city;
-                        $scope.formData.event_location[i] = result[i].event_location;
+                        $scope.formData.event_detail_id[$scope.counter_for_loadmore+i] = result[i].event_detail_id;
+                        $scope.formData.event_name[$scope.counter_for_loadmore+i] = result[i].event_name;
+                        $scope.formData.event_category[$scope.counter_for_loadmore+i] = result[i].category_name;
+                        $scope.formData.event_cost[$scope.counter_for_loadmore+i] = result[i].event_cost;
+                        $scope.formData.event_overview[$scope.counter_for_loadmore+i] = result[i].event_overview;
+                        $scope.formData.event_hashtags[$scope.counter_for_loadmore+i] = result[i].event_hashtags;
+                        $scope.formData.venue_name[$scope.counter_for_loadmore+i] = result[i].venue_name;
+                        $scope.formData.event_area[$scope.counter_for_loadmore+i] = result[i].event_area;
+                        $scope.formData.event_city[$scope.counter_for_loadmore+i] = result[i].event_city;
+                        $scope.formData.event_location[$scope.counter_for_loadmore+i] = result[i].event_location;
                         $scope.formData.event_organizer_id = result[i].event_organizer_id;
-                        $scope.formData.image[i] = result[i].image;
-                        $scope.formData.datetime[i] = result[i].datetime;
-                        $scope.formData.event_cost[i] = parseInt($scope.formData.event_cost[i]);
+                        $scope.formData.image[$scope.counter_for_loadmore+i] = result[i].image;
+                        $scope.formData.datetime[$scope.counter_for_loadmore+i] = result[i].datetime;
+                        $scope.formData.event_cost[$scope.counter_for_loadmore+i] = parseInt($scope.formData.event_cost[i]);
 
 
-                        for(var j = 0;j<$scope.formData.image[i].length;j++){
-                            if($scope.formData.image[i][j].primary == 1) {
-                                k++;
-                                (function(j_alias,k){
-                                    userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
-                                        $scope.encoded_image_path_array[k] = result;
+                        for(var j = 0;j<$scope.formData.image[$scope.counter_for_loadmore+i].length;j++){
 
-                                    })
-                                }(j,k))
+                            if($scope.formData.image[$scope.counter_for_loadmore+i][j].primary == 1) {
+
+                                $scope.formData.image[$scope.counter_for_loadmore+i] = $scope.formData.image[$scope.counter_for_loadmore+i][j].image_path;
+
+                                //k++;
+                                //(function(j_alias,k){
+                                //    userTaskFactory.loadImages($scope.formData.image[i][j_alias].image_path).then(function(result){
+                                //        $scope.encoded_image_path_array[k] = result;
+                                //
+                                //    })
+                                //}(j,k))
                             }
 
                         }
 
                     }
-                    console.log($scope.formData);
                     var temp_arr= [];
                     for(var i=0; i<result.length; i++){
-                        temp_arr.push(i);
+                        temp_arr.push($scope.counter_for_loadmore+i);
                     }
-                    for (var i=0; i<temp_arr.length; i+=3) {
-                        $scope.array_repeat_event.push(temp_arr.slice(i, i+3));
-                    }
-                    //for(var i = 1; i <= 1; i++) {
-                    //    //var last = $scope.array_repeat_event[$scope.array_repeat_event.length - 1];
-                    //    $scope.array_repeat_event.push($scope.loop_counter++);
+                    $scope.array_repeat_event.push(temp_arr.slice(0, 3));
+                    //for (var i=0; i<temp_arr.length; i+=3) {
+                    //  $scope.array_repeat_event.push(temp_arr.slice(i, i+3));
                     //}
                 }
+                $scope.counter_for_loadmore += 3;
             })
         };
 

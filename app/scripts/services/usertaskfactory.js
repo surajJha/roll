@@ -32,7 +32,7 @@ angular.module('rollApp')
         factory.getEventBySearch = function(searchParam, tablename, index, which_day){
             var defer = $q.defer();
 
-            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index+'&which_day='+which_day)
+            $http.get( 'server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index+'&which_day='+which_day)
                 .success(function(res){
                     defer.resolve(res);
                 })
@@ -55,7 +55,7 @@ angular.module('rollApp')
         factory.getEventByCategory = function(category, index, which_day){
             var defer = $q.defer();
 
-            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventByCategory&category='+category+'&index='+index+'&which_day='+which_day)
+            $http.get('server/userController.php?func=getEventByCategory&category='+category+'&index='+index+'&which_day='+which_day)
                 .success(function(res){
                     defer.resolve(res);
                 })
@@ -75,7 +75,7 @@ angular.module('rollApp')
         factory.getEventDetail = function(event_detail_id){
             var defer = $q.defer();
 
-            $http.get($rootScope.baseUrl + '/server/userController.php?func=getEventDetail&event_detail_id='+event_detail_id)
+            $http.get('server/userController.php?func=getEventDetail&event_detail_id='+event_detail_id)
                 .success(function(res){
                     defer.resolve(res);
                 })
@@ -94,7 +94,7 @@ angular.module('rollApp')
 
         factory.loadImages = function(path) {
             var defer = $q.defer();
-            $http.get($rootScope.baseUrl + '/server/resize350x340.php?imgpath='+path)
+            $http.get('server/resize350x340.php?imgpath='+path)
                 .success(function(res){
                     defer.resolve(res);
 

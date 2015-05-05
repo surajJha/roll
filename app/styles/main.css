@@ -41,30 +41,6 @@ body{
     margin-right: -22px;
 }
 
-.logo_header{
-    /*width:100%;*/
-    /*height:400px;*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*top: 0;*/
-    /*z-index: 1;*/
-    height: 70px;
-    position: absolute;
-    left: 3.125%;
-    top: 0px;
-    z-index: 1;
-}
-
-.logo_text_header{
-    position:absolute;
-    font-family:LogoFont;
-    top:7px;
-    left:13%;
-    color:white;
-    font-size:40px;
-    z-index: 6;
-}
-
 #input-search{
     width: 25%;
     height: 40px;
@@ -124,6 +100,10 @@ body{
 
 
 /*EVENTS DIV CSS*/
+.grid {
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
 
 .grid .darken:hover img {
     opacity: 0.3;
@@ -197,6 +177,16 @@ body{
     height:280px;
     font-size:30px;
 }
+#footer-social{
+    font-size:30px;
+    margin-left: 18%;
+}
+
+.footer-join-text{
+    font-size: 20px;
+    margin-left: 7%;
+}
+
 .footer{
     background:#512DA8;
 }
@@ -288,6 +278,9 @@ body{
     height: 400px;
     width: 100%;
 }
+#map{
+    height: 400px;
+}
 hr.event-partition {
     margin: 0;
     height: 7px;
@@ -299,7 +292,7 @@ hr.event-partition {
     height: 70px;
     font-size: 20px;
     border-bottom: 2px solid #ccc;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
 }
 .selectbox{
     position:relative;
@@ -368,9 +361,9 @@ a.event_type:hover{
 /*Footer CSS*/
 
 .join{
-     position:absolute;
-     top:121px;
-	 left:36%;
+     /*position:absolute;*/
+     /*top:121px;*/
+	 /*left:36%;*/
      text-align:center;
 }
 
@@ -397,7 +390,12 @@ a.event_type:hover{
     z-index: 1;
 }
 
-.logo_text_footer{
+.logo_header{
+    height: 70px;
+    z-index: 1;
+}
+
+.logo_text_footer, .logo_text_header{
     font-family:LogoFont;
     color:white;
     font-size:40px;
@@ -446,4 +444,10 @@ a:hover{
 
 a{
     text-decoration: none;
+}
+
+.event-detail-image {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
 }
