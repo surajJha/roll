@@ -86,7 +86,7 @@ class UserModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
@@ -172,7 +172,7 @@ class UserModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
@@ -254,7 +254,7 @@ class UserModel
                     $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                     $rows[$i]['event_location'] = $row['event_location'];
                     $rows[$i]['event_name'] = $row['event_name'];
-                    $rows[$i]['event_overview'] = $row['event_overview'];
+                    $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                     $rows[$i]['venue_name'] = $row['venue_name'];
                     $rows[$i]['datetime'] = array();
                     $rows[$i]['image'] = array();
@@ -342,7 +342,7 @@ class UserModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
@@ -489,7 +489,7 @@ class UserModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
@@ -578,7 +578,7 @@ class UserModel
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
-                $rows[$i]['event_overview'] = $row['event_overview'];
+                $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
