@@ -102,6 +102,20 @@ class UserModel
                         $z['date'] = $y[0];
                         $z['start_time'] = $y[1];
                         $z['end_time'] = $y[2];
+
+                        $y = explode('-',$z['date']);
+                        $z['day'] = $y[0];
+                        $z['month'] = $y[1];
+                        $z['year'] = $y[0];
+
+                        $y = explode(':',$z['start_time']);
+                        $z['start_time_hour'] = $y[0];
+                        $z['start_time_min'] = $y[1];
+
+                        $y = explode(':',$z['end_time']);
+                        $z['end_time_hour'] = $y[0];
+                        $z['end_time_min'] = $y[1];
+
                         array_push($rows[$i]['datetime'] , $z);
                     }
                 }
@@ -186,6 +200,20 @@ class UserModel
                         $z['date'] = $y[0];
                         $z['start_time'] = $y[1];
                         $z['end_time'] = $y[2];
+
+                        $y = explode('-',$z['date']);
+                        $z['day'] = $y[0];
+                        $z['month'] = $y[1];
+                        $z['year'] = $y[0];
+
+                        $y = explode(':',$z['start_time']);
+                        $z['start_time_hour'] = $y[0];
+                        $z['start_time_min'] = $y[1];
+
+                        $y = explode(':',$z['end_time']);
+                        $z['end_time_hour'] = $y[0];
+                        $z['end_time_min'] = $y[1];
+
                         array_push($rows[$i]['datetime'], $z);
                     }
                 } else {
@@ -270,6 +298,20 @@ class UserModel
                             $z['date'] = $y[0];
                             $z['start_time'] = $y[1];
                             $z['end_time'] = $y[2];
+
+                            $y = explode('-',$z['date']);
+                            $z['day'] = $y[0];
+                            $z['month'] = $y[1];
+                            $z['year'] = $y[0];
+
+                            $y = explode(':',$z['start_time']);
+                            $z['start_time_hour'] = $y[0];
+                            $z['start_time_min'] = $y[1];
+
+                            $y = explode(':',$z['end_time']);
+                            $z['end_time_hour'] = $y[0];
+                            $z['end_time_min'] = $y[1];
+
                             array_push($rows[$i]['datetime'] , $z);
                         }
                     }
@@ -358,6 +400,20 @@ class UserModel
                         $z['date'] = $y[0];
                         $z['start_time'] = $y[1];
                         $z['end_time'] = $y[2];
+
+                        $y = explode('-',$z['date']);
+                        $z['day'] = $y[0];
+                        $z['month'] = $y[1];
+                        $z['year'] = $y[0];
+
+                        $y = explode(':',$z['start_time']);
+                        $z['start_time_hour'] = $y[0];
+                        $z['start_time_min'] = $y[1];
+
+                        $y = explode(':',$z['end_time']);
+                        $z['end_time_hour'] = $y[0];
+                        $z['end_time_min'] = $y[1];
+
                         array_push($rows[$i]['datetime'] , $z);
                     }
                 }
@@ -505,6 +561,20 @@ class UserModel
                         $z['date'] = $y[0];
                         $z['start_time'] = $y[1];
                         $z['end_time'] = $y[2];
+
+                        $y = explode('-',$z['date']);
+                        $z['day'] = $y[0];
+                        $z['month'] = $y[1];
+                        $z['year'] = $y[0];
+
+                        $y = explode(':',$z['start_time']);
+                        $z['start_time_hour'] = $y[0];
+                        $z['start_time_min'] = $y[1];
+
+                        $y = explode(':',$z['end_time']);
+                        $z['end_time_hour'] = $y[0];
+                        $z['end_time_min'] = $y[1];
+
                         array_push($rows[$i]['datetime'] , $z);
                     }
                 }
@@ -594,6 +664,20 @@ class UserModel
                         $z['date'] = $y[0];
                         $z['start_time'] = $y[1];
                         $z['end_time'] = $y[2];
+
+                        $y = explode('-',$z['date']);
+                        $z['day'] = $y[0];
+                        $z['month'] = $y[1];
+                        $z['year'] = $y[0];
+
+                        $y = explode(':',$z['start_time']);
+                        $z['start_time_hour'] = $y[0];
+                        $z['start_time_min'] = $y[1];
+
+                        $y = explode(':',$z['end_time']);
+                        $z['end_time_hour'] = $y[0];
+                        $z['end_time_min'] = $y[1];
+
                         array_push($rows[$i]['datetime'] , $z);
                     }
                 }
