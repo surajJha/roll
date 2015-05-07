@@ -62,8 +62,7 @@ angular.module('rollApp')
                 var address = String($scope.formData.event_location);
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-
-                        $scope.map.setCenter(new google.maps.LatLng(parseFloat(results[0].geometry.location.k), parseFloat(results[0].geometry.location.D)));
+                        $scope.map.setCenter(new google.maps.LatLng(parseFloat(results[0].geometry.location.A), parseFloat(results[0].geometry.location.F)));
                         var marker = new google.maps.Marker({
                             map: $scope.map,
                             position: results[0].geometry.location
