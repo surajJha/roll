@@ -464,8 +464,9 @@ class UserModel
 
     public function getSearchResults($city, $q)
     {
+        $current_date = date("Y-m-d");
         $db = $this->getDatabaseObject();
-        $query = "select area_name, 'Area' as type, '' as event_detail_id FROM area WHERE area_name LIKE '{$q}%' AND city_name = '{$city}' UNION ALL  select e.event_name, 'Event' as type, e.event_detail_id FROM event_detail e, area a WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.event_name LIKE '{$q}%' UNION ALL  select e.venue_name, 'Venue' as type, '' FROM event_detail e, area a WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.venue_name LIKE '{$q}%'";
+        $query = "select area_name, 'Area' as type, '' as event_detail_id FROM area WHERE area_name LIKE '{$q}%' AND city_name = '{$city}' UNION ALL  select DISTINCT e.event_name, 'Event' as type, e.event_detail_id FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.event_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}' UNION ALL  select e.venue_name, 'Venue' as type, '' FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.venue_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}'";
 
         $temp = $db->query($query);
 
@@ -476,7 +477,7 @@ class UserModel
             $i = 0;
             while ($row = $temp->fetch_assoc()){
 
-                $rows[$i]['area_name'] = $row['area_name'];
+                $rows[$i]['area_name'] = htmlspecialchars_decode(stripslashes($row['area_name']));
                 $rows[$i]['type'] = $row['type'];
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $i++;
