@@ -14,7 +14,6 @@ angular.module('rollApp')
         $scope.city = "Mumbai";
 
         $scope.goToHome = function(){
-            console.log("go to home");
             $state.go("home");
         }
 
