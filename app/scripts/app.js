@@ -34,7 +34,7 @@ angular
         }).state('events', {
             url: '/events',
             //url:'/events?type?query',
-            params:{'type': null, 'query':null},
+            params:{'type': null, 'query':null, 'event_detail_id':null},
             templateUrl:'views/searchResultByEventName.html',
             controller : 'eventSearchController'
         }).state('event', {
@@ -58,7 +58,7 @@ angular
          * port 9000 used by the grunt server cannot run PHP
          * @type {string}
          */
-        //$rootScope.baseUrl = 'http://localhost:80/roll'
+      //  $rootScope.baseUrl = 'http://localhost:80/roll'
        $rootScope.baseUrl = 'http://www.rollingscenes.com';
 
     })

@@ -136,7 +136,11 @@ angular.module('rollApp')
                 $state.go("home");
                 return;
             }
-            $scope.getTodaysEventsBySearch();
+            if($stateParams.type != 'Event')
+                $scope.getTodaysEventsBySearch();
+            else{
+                $state.go("event",{formData: parseInt($stateParams.event_detail_id)})
+            }
         }
 
         $scope.init();
