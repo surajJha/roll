@@ -178,12 +178,14 @@ class UserController
     public function socialUserLogin(){
 
         $username = (isset($_GET['username']) && $_GET['username']!=null )?$this->custom_filter_input($_GET['username']):'';
-        $primaryEmail = (isset($_GET['primaryEmail']) && $_GET['primaryEmail']!=null )?$this->custom_filter_input($_GET['primaryEmail']):'';
+        $emailId = (isset($_GET['emailId']) && $_GET['emailId']!=null )?$this->custom_filter_input($_GET['emailId']):'';
+        $dob = (isset($_GET['dob']) && $_GET['dob']!=null )?$this->custom_filter_input($_GET['dob']):'';
+        $city = (isset($_GET['city']) && $_GET['city']!=null )?$this->custom_filter_input($_GET['city']):'';
         $socialLoginId = (isset($_GET['socialLoginId']) && $_GET['socialLoginId']!=null )?$this->custom_filter_input($_GET['socialLoginId']):'';
         $socialLoginService = (isset($_GET['socialLoginService']) && $_GET['socialLoginService']!=null )?$this->custom_filter_input($_GET['socialLoginService']):'';
 
         $model = new UserModel();
-        $result = $model->socialUserLogin($username, $primaryEmail, $socialLoginId, $socialLoginService);
+        $result = $model->socialUserLogin($username, $emailId, $dob, $city, $socialLoginId, $socialLoginService);
 
         if($result['status'] == 'success')
         {
