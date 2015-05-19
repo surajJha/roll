@@ -121,6 +121,21 @@ class UserController
         }
     }
 
+    public function getAllEvents(){
+        $current_date = date("Y-m-d");
+        $model = new UserModel();
+        $result = $model->getAllEvents($current_date);
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            $result['data'] = array();
+            echo json_encode($result['data']);
+        }
+    }
+
     public function getSearchResults()
     {
         $city = $this->custom_filter_input($_GET['city']);
