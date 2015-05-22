@@ -192,12 +192,12 @@ class UserController
 
     public function socialUserLogin(){
 
-        $username = (isset($_GET['username']) && $_GET['username']!=null )?$this->custom_filter_input($_GET['username']):'';
-        $emailId = (isset($_GET['emailId']) && $_GET['emailId']!=null )?$this->custom_filter_input($_GET['emailId']):'';
-        $dob = (isset($_GET['dob']) && $_GET['dob']!=null )?$this->custom_filter_input($_GET['dob']):'';
-        $city = (isset($_GET['city']) && $_GET['city']!=null )?$this->custom_filter_input($_GET['city']):'';
-        $socialLoginId = (isset($_GET['socialLoginId']) && $_GET['socialLoginId']!=null )?$this->custom_filter_input($_GET['socialLoginId']):'';
-        $socialLoginService = (isset($_GET['socialLoginService']) && $_GET['socialLoginService']!=null )?$this->custom_filter_input($_GET['socialLoginService']):'';
+        $username = (isset($_POST['username']) && $_POST['username']!=null )?$this->custom_filter_input($_POST['username']):'';
+        $emailId = (isset($_POST['emailId']) && $_POST['emailId']!=null )?$this->custom_filter_input($_POST['emailId']):'';
+        $dob = (isset($_POST['dob']) && $_POST['dob']!=null )?$this->custom_filter_input($_POST['dob']):'';
+        $city = (isset($_POST['city']) && $_POST['city']!=null )?$this->custom_filter_input($_POST['city']):'';
+        $socialLoginId = (isset($_POST['socialLoginId']) && $_POST['socialLoginId']!=null )?$this->custom_filter_input($_POST['socialLoginId']):'';
+        $socialLoginService = (isset($_POST['socialLoginService']) && $_POST['socialLoginService']!=null )?$this->custom_filter_input($_POST['socialLoginService']):'';
 
         $model = new UserModel();
         $result = $model->socialUserLogin($username, $emailId, $dob, $city, $socialLoginId, $socialLoginService);

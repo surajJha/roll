@@ -826,15 +826,14 @@ class UserModel
     public function socialUserLogin($username, $emailId, $dob, $city, $socialLoginId, $socialLoginService)
     {
         $db = $this->getDatabaseObject();
-        $user_name = (isset($username) && $username!=null )?$db->real_escape_string($username):'';
-        $user_email_id = (isset($emailId) && $emailId!=null )?$db->real_escape_string($emailId):'';
-        $user_dob = (isset($dob) && $dob!=null )?$db->real_escape_string($dob):'';
-        $user_city = (isset($city) && $city!=null )?$db->real_escape_string($city):'';
-        $social_login_id = (isset($socialLoginId) && $socialLoginId!=null )?$db->real_escape_string($socialLoginId):'';
-        $social_login_service = (isset($socialLoginService) && $socialLoginService!=null )?$db->real_escape_string($socialLoginService):'';
+        $user_name = (isset($username) && $username!=null )?$username:'';
+        $user_email_id = (isset($emailId) && $emailId!=null )?$emailId:'';
+        $user_dob = (isset($dob) && $dob!=null )?$dob:'';
+        $user_city = (isset($city) && $city!=null )?$city:'';
+        $social_login_id = (isset($socialLoginId) && $socialLoginId!=null )?$socialLoginId:'';
+        $social_login_service = (isset($socialLoginService) && $socialLoginService!=null )?$socialLoginService:'';
 
         $query = "select * from user_login where social_login_id = '{$social_login_id}'";
-
         $temp = $db->query($query);
         $result = array();
 
@@ -845,8 +844,7 @@ class UserModel
         }
         else
         {
-            $query = "INSERT INTO 'user_login' ('user_name', 'user_email_id', 'user_dob', 'user_city', 'social_login_id', 'social_login_service') VALUES ('{$user_name}','{$user_email_id}','{$user_dob}','{$user_city}',{$social_login_id},'{$social_login_service}')";
-
+            $query = "INSERT INTO user_login (user_name, user_email_id, user_dob, user_city, social_login_id, social_login_service) VALUES ({$user_name},{$user_email_id},{$user_dob},{$user_city},{$social_login_id},{$social_login_service})";
             $temp = $db->query($query);
             $result = array();
 
@@ -859,6 +857,8 @@ class UserModel
                 $result['data'] = 'There was problem saving the data';
             }
         }
+
+        return $result;
     }
 
 }
