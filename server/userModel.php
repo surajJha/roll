@@ -42,7 +42,7 @@ class UserModel
         if($which_day == 'today'){
             if($category_name!=''){
                 $current_date = date("Y-m-d");
-                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.category_name = '{$category_name}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
+                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a, category as c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.category_name = '{$category_name}'and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
 
             }
             else{
@@ -53,7 +53,7 @@ class UserModel
         elseif($which_day == 'tomorrow'){
             if($category_name!=''){
                 $current_date = date("Y-m-d", time()+86400);
-                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.category_name = '{$category_name}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
+                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a, category as c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.category_name = '{$category_name}'and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
             }
             else{
                 $result['status'] = 'failure';
@@ -64,7 +64,7 @@ class UserModel
             if($category_name!=''){
                 $from_date = date('Y-m-d', strtotime("+3 days"));
                 $to_date = date('Y-m-d', strtotime("+7 days"));
-                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.category_name = '{$category_name}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
+                $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a, category as c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.category_name = '{$category_name}'and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count  LIMIT {$index},3";
             }
             else{
                 $result['status'] = 'failure';
@@ -80,6 +80,7 @@ class UserModel
             while($row = $temp->fetch_assoc())
             {
                 $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
@@ -464,8 +465,7 @@ class UserModel
 
     public function getAllEvents($current_date){
         $db = $this->getDatabaseObject();
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date = '{$current_date}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
-
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, a.area_id, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.category_name, ed.event_organizer_id, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image, ei.event_image_id)) as image from event_detail ed, event_schedule es, event_image ei, area as a, category as c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and es.event_date >= '{$current_date}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count";
         $temp = $db->query($query);
         $result =array();
         if($temp->num_rows>0)
@@ -474,6 +474,7 @@ class UserModel
             while($row = $temp->fetch_assoc())
             {
                 $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
@@ -595,38 +596,38 @@ class UserModel
         if($which_day == 'today'){
             $current_date = date("Y-m-d");
             if($tablename == 'Venue'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.venue_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c  where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.venue_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Area'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and a.area_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and a.area_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Event'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.event_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.event_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
         }
         elseif($which_day == 'tomorrow'){
             $current_date = date("Y-m-d", time()+86400);
             if($tablename == 'Venue'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.venue_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.venue_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Area'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and a.area_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and a.area_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Event'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.event_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date = '{$current_date}' and ed.event_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
         }
         elseif($which_day == 'later'){
             $from_date = date('Y-m-d', strtotime("+3 days"));
             $to_date = date('Y-m-d', strtotime("+7 days"));
             if($tablename == 'Venue'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.venue_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.venue_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Area'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and a.area_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and a.area_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
             elseif($tablename == 'Event'){
-                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.event_name='{$searchParam}' group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
+                $query = "select ed.event_detail_id, ed.venue_name, ed.event_name, ed.event_hashtags, ed.event_location, ed.event_overview, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.viewer_count, ed.priority_count, ed.category_name, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a, category c where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.is_active = 1 and es.event_date between '{$from_date}' and '{$to_date}' and ed.event_name='{$searchParam}' and c.category_name = ed.category_name group by ed.event_detail_id order by ed.priority_count, ed.viewer_count LIMIT {$index},3";
             }
         }
 
@@ -638,6 +639,7 @@ class UserModel
             while($row = $temp->fetch_assoc())
             {
                 $rows[$i]['category_name'] = $row['category_name'];
+                $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
@@ -833,14 +835,18 @@ class UserModel
         $social_login_id = (isset($socialLoginId) && $socialLoginId!=null )?$socialLoginId:'';
         $social_login_service = (isset($socialLoginService) && $socialLoginService!=null )?$socialLoginService:'';
 
-        $query = "select * from user_login where social_login_id = '{$social_login_id}'";
+        $query = "select * from user_login where social_login_id = {$social_login_id}";
         $temp = $db->query($query);
         $result = array();
-
+        $rows = array();
         if($temp->num_rows>0)
         {
+            while($row = $temp->fetch_assoc())
+            {
+                $rows = $row;
+            }
             $result['status'] = 'success';
-            $result['data'] = $temp;
+            $result['data'] = $rows;
         }
         else
         {
