@@ -84,7 +84,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
@@ -478,7 +478,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
@@ -643,7 +643,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = $row['event_cost'];
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));

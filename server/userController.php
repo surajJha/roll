@@ -204,7 +204,15 @@ class UserController
 
         if($result['status'] == 'success')
         {
-            echo json_encode($result['data']);
+
+            if($result['data'] == 'Data Inserted Successfully'){
+                $result['data'] = array();
+                echo json_encode($result['data']);
+            }
+            else{
+                echo json_encode($result['data']);
+            }
+
         }
         else
         {
