@@ -83,7 +83,7 @@ class UserModel
                 $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -136,6 +136,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                 }
@@ -183,7 +184,7 @@ class UserModel
                 $rows[$i]['category_name'] = $row['category_name'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -233,6 +234,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                 }
@@ -279,7 +281,7 @@ class UserModel
                     $rows[$i]['category_name'] = $row['category_name'];
                     $rows[$i]['event_area'] = $row['area_name'];
                     $rows[$i]['event_city'] = $row['city_name'];
-                    $rows[$i]['event_cost'] = $row['event_cost'];
+                    $rows[$i]['event_cost'] = intval($row['event_cost']);
                     $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                     $rows[$i]['event_location'] = $row['event_location'];
                     $rows[$i]['event_name'] = $row['event_name'];
@@ -332,6 +334,7 @@ class UserModel
                             $z = array();
                             $z['image_path'] = $y[0];
                             $z['primary'] = $y[1];
+                            $z['primary_bool'] = $z['primary'] == '1'? true : false;
                             array_push($rows[$i]['image'] , $z);
                         }
                     }
@@ -381,7 +384,7 @@ class UserModel
                 $rows[$i]['category_name'] = $row['category_name'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -435,6 +438,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                 }
@@ -477,7 +481,7 @@ class UserModel
                 $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -531,6 +535,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                 }
@@ -642,7 +647,7 @@ class UserModel
                 $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -696,6 +701,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                 }
@@ -745,7 +751,7 @@ class UserModel
                 $rows[$i]['category_name'] = $row['category_name'];
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
-                $rows[$i]['event_cost'] = $row['event_cost'];
+                $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = $row['event_detail_id'];
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
@@ -767,7 +773,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
@@ -799,6 +805,7 @@ class UserModel
                         $z = array();
                         $z['image_path'] = $y[0];
                         $z['primary'] = $y[1];
+                        $z['primary_bool'] = $z['primary'] == '1'? true : false;
                         array_push($rows[$i]['image'] , $z);
                     }
                     $i++;
