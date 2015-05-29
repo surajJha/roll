@@ -105,7 +105,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
@@ -204,7 +204,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
@@ -303,7 +303,7 @@ class UserModel
                             $z['end_time'] = $y[2];
 
                             $y = explode('-',$z['date']);
-                            $z['day'] = $y[0];
+                            $z['day'] = $y[2];
                             $z['month'] = $y[1];
                             $z['year'] = $y[0];
 
@@ -406,7 +406,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
@@ -503,7 +503,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
@@ -669,7 +669,7 @@ class UserModel
                         $z['end_time'] = $y[2];
 
                         $y = explode('-',$z['date']);
-                        $z['day'] = $y[0];
+                        $z['day'] = $y[2];
                         $z['month'] = $y[1];
                         $z['year'] = $y[0];
 
