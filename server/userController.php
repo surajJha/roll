@@ -55,6 +55,28 @@ class UserController
     }
 
     /**
+     * This function takes as input the category_name
+     * and returns an array of data corresponding to
+     * all the events of particular category
+     */
+
+    public function getEventsByCategoryAndroid(){
+        $category = $this->custom_filter_input($_GET['category']);
+
+        $model = new UserModel();
+        $result = $model->getEventsByCategoryAndroid($category);
+        if($result['status'] == 'success')
+        {
+            echo json_encode($result['data']);
+        }
+        else
+        {
+            $result['data'] = array();
+            echo json_encode($result['data']);
+        }
+    }
+
+    /**
      * This function calculates today's date
      * and returns an array of data corresponding to
      * all the events happening today
