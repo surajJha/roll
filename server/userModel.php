@@ -956,7 +956,7 @@ class UserModel
         $social_login_id = (isset($socialLoginId) && $socialLoginId!=null )?$socialLoginId:'';
         $social_login_service = (isset($socialLoginService) && $socialLoginService!=null )?$socialLoginService:'';
 
-        $query = "select * from user_login where social_login_id = {$social_login_id}";
+        $query = "select * from user_login where social_login_id = '{$social_login_id}'";
         $temp = $db->query($query);
         $result = array();
         $rows = array();
@@ -971,7 +971,7 @@ class UserModel
         }
         else
         {
-            $query = "INSERT INTO user_login (user_name, user_email_id, user_dob, user_city, social_login_id, social_login_service) VALUES ({$user_name},{$user_email_id},{$user_dob},{$user_city},{$social_login_id},{$social_login_service})";
+            $query = "INSERT INTO user_login (user_name, user_email_id, user_dob, user_city, social_login_id, social_login_service) VALUES ('{$user_name}','{$user_email_id}','{$user_dob}','{$user_city}','{$social_login_id}','{$social_login_service}')";
             $temp = $db->query($query);
             $result = array();
 
