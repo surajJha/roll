@@ -127,22 +127,37 @@ angular.module('rollApp')
             }
             else{
                 // user coming from the search results page
-                $scope.formData.event_name = $scope.eventdata.event_name[$scope.id];
-                $scope.formData.event_category = $scope.eventdata.event_category[$scope.id];
-                $scope.formData.event_overview = $scope.eventdata.event_overview[$scope.id];
-                $scope.formData.event_hashtags = $scope.eventdata.event_hashtags[$scope.id];
-                $scope.formData.venue_name = $scope.eventdata.venue_name[$scope.id];
-                $scope.formData.event_area = $scope.eventdata.event_area[$scope.id];
-                $scope.formData.event_city = $scope.eventdata.event_city[$scope.id];
-                $scope.formData.event_location = $scope.eventdata.event_location[$scope.id];
-                $scope.formData.image = $scope.eventdata.image[$scope.id];
-                $scope.formData.datetime = $scope.eventdata.datetime[$scope.id];
-                $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
-                $scope.formData.event_cost = parseInt($scope.eventdata.event_cost[$scope.id]);
-                if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
-                    $scope.formData.event_cost = "Free Entry";
-                }
-                $scope.eventDetailTemplating($scope.formData);
+               // TODO: have to make a common function for both if and else only the parameter is different. we can set that also. just have to pass id now. and no formdata
+                userTaskFactory.getEventDetail($scope.eventdata.event_detail_id[$scope.id]).then(function(result)
+                {
+                    if(result.length > 0) {
+                        $scope.formData.event_location = result[0].event_location;
+                        $scope.formData.event_name = result[0].event_name;
+                        $scope.formData.event_category = result[0].category_name;
+                        $scope.formData.event_cost = result[0].event_cost;
+                        $scope.formData.event_overview = result[0].event_overview;
+                        $scope.formData.event_hashtags = result[0].event_hashtags;
+                        $scope.formData.venue_name = result[0].venue_name;
+                        $scope.formData.event_area = result[0].event_area;
+                        $scope.formData.event_city = result[0].event_city;
+                        $scope.formData.image = result[0].image;
+                        $scope.formData.datetime = result[0].datetime;
+                        $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
+                        $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
+                        console.log($scope.formData.event_cost == null);
+                        if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
+                            $scope.formData.event_cost = "Free Entry";
+                        }
+                        $scope.eventDetailTemplating($scope.formData);
+                    }
+                    else {
+                        // TODO : will have to do something better if data was not fetched properly
+                        $state.go("home");
+                        return;
+                    }
+
+                })
+
             }
         }
 
