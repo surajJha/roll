@@ -108,10 +108,10 @@ angular.module('rollApp')
                         $scope.formData.venue_name = result[0].venue_name;
                         $scope.formData.event_area = result[0].event_area;
                         $scope.formData.event_city = result[0].event_city;
-                        $scope.formData.image = result[0].image;
+                        $scope.formData.image = result[0].image[0].image_path;
                         $scope.formData.datetime = result[0].datetime;
                         $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
-                        $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
+                        $scope.formData.event_cost = $scope.formData.event_cost[0];
                         if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
                             $scope.formData.event_cost = "Free Entry";
                         }
@@ -140,11 +140,10 @@ angular.module('rollApp')
                         $scope.formData.venue_name = result[0].venue_name;
                         $scope.formData.event_area = result[0].event_area;
                         $scope.formData.event_city = result[0].event_city;
-                        $scope.formData.image = result[0].image;
+                        $scope.formData.image = result[0].image[0].image_path;
                         $scope.formData.datetime = result[0].datetime;
                         $scope.formData.no_of_days = $scope.makeArray($scope.formData.datetime.length);
-                        $scope.formData.event_cost = parseInt($scope.formData.event_cost[0]);
-                        console.log($scope.formData.event_cost == null);
+                        $scope.formData.event_cost = $scope.formData.event_cost[0];
                         if($scope.formData.event_cost == 0 || $scope.formData.event_cost == null || $scope.formData.event_cost == undefined){
                             $scope.formData.event_cost = "Free Entry";
                         }
