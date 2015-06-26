@@ -62,9 +62,11 @@ class UserController
 
     public function getEventsByCategoryAndroid(){
         $category = $this->custom_filter_input($_GET['category']);
+        $index = $this->custom_filter_input($_GET['index']);
+        $which_day = $this->custom_filter_input($_GET['which_day']);
 
         $model = new UserModel();
-        $result = $model->getEventsByCategoryAndroid($category);
+        $result = $model->getEventsByCategoryAndroid($category, $which_day);
         if($result['status'] == 'success')
         {
             echo json_encode($result['data']);
@@ -104,7 +106,7 @@ class UserController
      */
 
     public function getTomorrowsEvents(){
-         //1 Day = 24*60*60 = 86400
+        //1 Day = 24*60*60 = 86400
 
         $current_date = date("Y-m-d", time()+86400);
         $model = new UserModel();
@@ -213,17 +215,17 @@ class UserController
     }
 
     public function socialUserLogin(){
-
-        $username = (isset($_POST['username']) && $_POST['username']!=null )?$this->custom_filter_input($_POST['username']):'';
-        $emailId = (isset($_POST['emailId']) && $_POST['emailId']!=null )?$this->custom_filter_input($_POST['emailId']):'';
+        $user_id = (isset($_POST['user_id']) && $_POST['user_id']!=null )?$this->custom_filter_input($_POST['user_id']):'';
+        $username = (isset($_POST['user_name']) && $_POST['user_name']!=null )?$this->custom_filter_input($_POST['user_name']):'';
+        $emailId = (isset($_POST['user_email_id']) && $_POST['user_email_id']!=null )?$this->custom_filter_input($_POST['user_email_id']):'';
         $dob = (isset($_POST['dob']) && $_POST['dob']!=null )?$this->custom_filter_input($_POST['dob']):'';
         $city = (isset($_POST['city']) && $_POST['city']!=null )?$this->custom_filter_input($_POST['city']):'';
-        $socialLoginId = (isset($_POST['socialLoginId']) && $_POST['socialLoginId']!=null )?$this->custom_filter_input($_POST['socialLoginId']):'';
-        $socialLoginService = (isset($_POST['socialLoginService']) && $_POST['socialLoginService']!=null )?$this->custom_filter_input($_POST['socialLoginService']):'';
+        $socialLoginId = (isset($_POST['social_login_id']) && $_POST['social_login_id']!=null )?$this->custom_filter_input($_POST['social_login_id']):'';
+        $socialLoginService = (isset($_POST['social_login_service']) && $_POST['social_login_service']!=null )?$this->custom_filter_input($_POST['social_login_service']):'';
 
         $model = new UserModel();
-        $result = $model->socialUserLogin($username, $emailId, $dob, $city, $socialLoginId, $socialLoginService);
-
+        $result = $model->socialUserLogin($user_id, $username, $emailId, $dob, $city, $socialLoginId, $socialLoginService);
+//echo $result;exit;
         if($result['status'] == 'success')
         {
 
