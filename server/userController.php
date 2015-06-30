@@ -62,11 +62,14 @@ class UserController
 
     public function getEventsByCategoryAndroid(){
         $category = $this->custom_filter_input($_GET['category']);
+        if($category == 'Food   Drinks')
+            $category = 'Food + Drinks';
         $index = $this->custom_filter_input($_GET['index']);
         $which_day = $this->custom_filter_input($_GET['which_day']);
 
         $model = new UserModel();
         $result = $model->getEventsByCategoryAndroid($category, $which_day);
+        // echo $result; exit;
         if($result['status'] == 'success')
         {
             echo json_encode($result['data']);
