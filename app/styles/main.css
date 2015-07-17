@@ -5,12 +5,12 @@
 
 @font-face {
     font-family: myFirstFont;
-    src: url(SketchRockwell-Bold.ttf);
+    src: url('SketchRockwell-Bold.ttf');
 }
 
 @font-face {
     font-family: LogoFont;
-    src: url(MrDafoe-Regular.ttf);
+    src: url('MrDafoe-Regular.ttf');
 }
 
 body{
