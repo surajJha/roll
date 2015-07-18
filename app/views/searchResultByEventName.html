@@ -29,19 +29,19 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="schedule_type">
-                <div ng-class="{selectedDay: which_day == 'today'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox" id="today">
-                    <a class="event_type" ng-click="getTodaysEventsBySearch()">Today</a>
-                </div>
-                <div ng-class="{selectedDay: which_day == 'tomorrow'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
-                    <a class="event_type" ng-click="getTomorrowsEventsBySearch()">Tomorrow</a>
-                </div>
-                <div ng-class="{selectedDay: which_day == 'later'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">
-                    <a class="event_type" ng-click="getLatersEventsBySearch()">Later</a>
-                </div>
-            </div>
-        </div>
+        <!--<div class="row">-->
+            <!--<div class="schedule_type">-->
+                <!--<div ng-class="{selectedDay: which_day == 'today'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox" id="today">-->
+                    <!--<a class="event_type" ng-click="getTodaysEventsBySearch()">Today</a>-->
+                <!--</div>-->
+                <!--<div ng-class="{selectedDay: which_day == 'tomorrow'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">-->
+                    <!--<a class="event_type" ng-click="getTomorrowsEventsBySearch()">Tomorrow</a>-->
+                <!--</div>-->
+                <!--<div ng-class="{selectedDay: which_day == 'later'}" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 selectbox">-->
+                    <!--<a class="event_type" ng-click="getLatersEventsBySearch()">Later</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
         <div class="row">
             <div class="container">
@@ -55,7 +55,7 @@
                                       <span>
                                          <h2>{{formData.event_name[j]}}</h2>
                                          <h3>{{formData.event_category[j]}}</h3>
-                                         <h3><i class="fa fa-map-marker fa-lg"></i>   Irish House, Colaba</h3>
+                                         <h3><i class="fa fa-map-marker fa-lg"></i>  {{formData.venue_name[j]}}, {{formData.event_area[j]}}</h3>
                                       </span>
                                     </div>
                                 </div>

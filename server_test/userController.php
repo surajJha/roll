@@ -44,7 +44,7 @@ class UserController
      * all the events of particular category
      */
 
-    public function getEventsByCategory(){
+    public function getEventByCategory(){
         $start = microtime(true);
         $category = $this->userUtil->custom_filter_input($_GET['category']);
         $index = $this->userUtil->custom_filter_input($_GET['index']);
