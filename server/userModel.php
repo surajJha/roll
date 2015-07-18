@@ -226,6 +226,8 @@ class UserModel
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['event_latitude'] = $row['event_latitude'];
+                $rows[$i]['event_longitude'] = $row['event_longitude'];
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
@@ -428,7 +430,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = intval($row['event_cost']);
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
@@ -628,7 +630,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = intval($row['event_cost']);
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
@@ -812,11 +814,11 @@ class UserModel
     {
         $current_date = date("Y-m-d");
         $db = $this->getDatabaseObject();
-        $query = "select area_name, 'Area' as type, '' as event_detail_id FROM area WHERE area_name LIKE '{$q}%' AND city_name = '{$city}' UNION ALL  select DISTINCT e.event_name, 'Event' as type, e.event_detail_id FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.event_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}' UNION ALL  select e.venue_name, 'Venue' as type, '' FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.venue_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}'";
+        $query = "select area_name, 'Area' as type, '' as event_detail_id FROM area WHERE area_name LIKE '{$q}%' AND city_name = '{$city}' UNION ALL  select DISTINCT e.event_name, 'Event' as type, e.event_detail_id FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.event_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}' UNION ALL  select DISTINCT e.venue_name, 'Venue' as type, '' FROM event_detail e, area a, event_schedule es WHERE e.event_area_id = a.area_id and a.city_name = '{$city}' and e.venue_name LIKE '{$q}%' and e.event_detail_id = es.event_detail_id and es.event_date >= '{$current_date}'";
 
         $temp = $db->query($query);
 
-        // var_dump($temp->num_rows>0);
+       // var_dump($temp->num_rows>0);
         $result =array();
         if($temp->num_rows>0) {
 
@@ -825,7 +827,7 @@ class UserModel
 
                 $rows[$i]['area_name'] = htmlspecialchars_decode(stripslashes($row['area_name']));
                 $rows[$i]['type'] = $row['type'];
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $i++;
             }
             $result['status'] = 'success';
@@ -835,7 +837,7 @@ class UserModel
             $result['status'] = 'failure';
             $result['data'] = 'No results found';
         }
-        return $result;
+       return $result;
     }
 
     public function getEventBySearch($searchParam,$tablename, $index, $which_day){
@@ -996,7 +998,7 @@ class UserModel
                 $rows[$i]['event_area'] = $row['area_name'];
                 $rows[$i]['event_city'] = $row['city_name'];
                 $rows[$i]['event_cost'] = intval($row['event_cost']);
-                $rows[$i]['event_detail_id'] = $row['event_detail_id'];
+                $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
