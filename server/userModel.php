@@ -219,7 +219,7 @@ class UserModel
                 $rows[$i]['category_name'] = $row['category_name'];
                 $rows[$i]['category_color'] = $row['category_color'];
                 $rows[$i]['event_area'] = $row['area_name'];
-                $rows[$i]['event_city'] = $row['city_name'];
+                $rows[$i]['event_city'] =$row['city_name'];
                 $rows[$i]['event_cost'] = intval($row['event_cost']);
                 $rows[$i]['event_detail_id'] = intval($row['event_detail_id']);
                 $rows[$i]['event_location'] = $row['event_location'];
@@ -732,6 +732,8 @@ class UserModel
                 $rows[$i]['event_name'] = $row['event_name'];
                 $rows[$i]['event_overview'] = htmlspecialchars_decode(stripslashes($row['event_overview']));
                 $rows[$i]['venue_name'] = $row['venue_name'];
+                $rows[$i]['event_latitude'] = floatval($row['event_latitude']);
+                $rows[$i]['event_longitude'] = floatval($row['event_longitude']);
                 $rows[$i]['datetime'] = array();
                 $rows[$i]['image'] = array();
                 $rows[$i]['event_hashtags'] = explode(' ',$row['event_hashtags']);
