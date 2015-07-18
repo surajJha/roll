@@ -29,7 +29,7 @@ angular.module('rollApp')
          * @param index
          * @returns {jQuery.promise|promise.promise|d.promise|promise|.ready.promise|jQuery.ready.promise}
          */
-        factory.getEventBySearch = function(searchParam, tablename, index, which_day){
+        factory.getEventBySearch = function(searchParam, tablename, index){
             var defer = $q.defer();
 
             $http.get( 'server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index+'&which_day='+which_day)

@@ -36,10 +36,11 @@ angular.module('rollApp')
         $scope.selectedCategory = $stateParams.category;
         $scope.NoResultFound = true;
         $scope.counter_for_loadmore = 0;
+        console.log($stateParams);
 
         $scope.loadMore = function() {
             $scope.last_fetched_index+=3;
-            userTaskFactory.getEventBySearch($stateParams.query, $stateParams.type, $scope.last_fetched_index, $scope.which_day).then(function(result)
+            userTaskFactory.getEventBySearch($stateParams.query, $stateParams.type, $scope.last_fetched_index).then(function(result)
             {
                 if($scope.do_not_scroll) return;
 
@@ -97,9 +98,9 @@ angular.module('rollApp')
             })
         };
 
-        $scope.getTodaysEventsBySearch = function(){
+        $scope.getEventsBySearch = function(){
             $scope.NoResultFound = true;
-            $scope.which_day = "today";
+         //   $scope.which_day = "today";
             $scope.last_fetched_index = -3;
             $scope.do_not_scroll = false;
             $scope.array_repeat_event = [];
@@ -108,38 +109,38 @@ angular.module('rollApp')
 
         }
 
-        $scope.getTomorrowsEventsBySearch = function(){
-            $scope.NoResultFound = true;
-            $scope.which_day = "tomorrow";
-            $scope.last_fetched_index = -3;
-            $scope.do_not_scroll = false;
-            $scope.array_repeat_event = [];
-            $scope.loop_counter = 0;
-            $scope.loadMore();
-
-        }
-
-        $scope.getLatersEventsBySearch = function(){
-            $scope.NoResultFound = true;
-            $scope.which_day = "later";
-            $scope.last_fetched_index = -3;
-            $scope.do_not_scroll = false;
-            $scope.array_repeat_event = [];
-            $scope.loop_counter = 0;
-            $scope.loadMore();
-
-        }
+        //$scope.getTomorrowsEventsBySearch = function(){
+        //    $scope.NoResultFound = true;
+        //    $scope.which_day = "tomorrow";
+        //    $scope.last_fetched_index = -3;
+        //    $scope.do_not_scroll = false;
+        //    $scope.array_repeat_event = [];
+        //    $scope.loop_counter = 0;
+        //    $scope.loadMore();
+        //
+        //}
+        //
+        //$scope.getLatersEventsBySearch = function(){
+        //    $scope.NoResultFound = true;
+        //    $scope.which_day = "later";
+        //    $scope.last_fetched_index = -3;
+        //    $scope.do_not_scroll = false;
+        //    $scope.array_repeat_event = [];
+        //    $scope.loop_counter = 0;
+        //    $scope.loadMore();
+        //
+        //}
 
 
         $scope.init = function () {
-            if($stateParams.type == '' || $stateParams.type ==null){
+            if($stateParams.type == '' || $stateParams.type == null){
                 $state.go("home");
                 return;
             }
             if($stateParams.type != 'Event')
-                $scope.getTodaysEventsBySearch();
+                $scope.getEventsBySearch();
             else{
-                $state.go("event",{formData: parseInt($stateParams.event_detail_id)})
+                $state.go("event",{formData: parseInt($stateParams.event_detail_id), event_name: $stateParams.event_name})
             }
         }
 

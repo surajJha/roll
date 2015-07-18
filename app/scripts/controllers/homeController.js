@@ -19,8 +19,8 @@ angular.module('rollApp')
 
         $scope.submit = function() {
             if($scope.testObj){
-              //  $state.go("events", {type: $scope.testObj.description, query: $scope.testObj.title, event_detail_id: $scope.testObj.originalObject.event_detail_id});
-                $state.go("event", {formData: $scope.testObj.originalObject.event_detail_id});
+                $state.go("events", {type: $scope.testObj.description, query: $scope.testObj.title, event_detail_id: $scope.testObj.originalObject.event_detail_id, event_name: $scope.testObj.originalObject.event_name});
+                //$state.go("event", {formData: $scope.testObj.originalObject.event_detail_id});
             }
         }
 

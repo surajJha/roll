@@ -91,9 +91,8 @@ class UserController
         $searchParam = $this->userUtil->custom_filter_input($_GET['searchParam']);
         $tablename = $this->userUtil->custom_filter_input($_GET['tablename']);
         $index = $this->userUtil->custom_filter_input($_GET['index']);
-        $which_day = $this->userUtil->custom_filter_input($_GET['which_day']);
 
-        $result = $this->userModel->getEventBySearch($searchParam, $tablename, $index, $which_day);
+        $result = $this->userModel->getEventBySearch($searchParam, $tablename, $index);
         $end = microtime(true);
         $this->executionTimeLogger->logExecutionTime("getEventBySearch", $start, $end);
         $this->userUtil->formatResults($result);
