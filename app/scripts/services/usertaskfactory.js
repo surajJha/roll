@@ -32,7 +32,7 @@ angular.module('rollApp')
         factory.getEventBySearch = function(searchParam, tablename, index){
             var defer = $q.defer();
 
-            $http.get( 'server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index+'&which_day='+which_day)
+            $http.get('server/userController.php?func=getEventBySearch&searchParam='+searchParam+'&tablename='+tablename+'&index='+index)
                 .success(function(res){
                     defer.resolve(res);
                 })
