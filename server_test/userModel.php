@@ -68,7 +68,7 @@ class UserModel
     {
         $db = $this->userUtil->getDatabaseObject();
         $current_date = date("Y-m-d");
-        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_latitude, ed.event_longitude, a.area_id, a.area_name, a.city_name, ed.event_cost, ed.category_name, ed.viewer_count, ed.priority_count, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and ed.event_detail_id = '{$event_detail_id}' and es.event_date >= '{$current_date}'";
+        $query = "select ed.event_detail_id,ed.venue_name, ed.event_name, ed.event_overview, ed.event_hashtags, ed.event_location, ed.event_latitude, ed.event_longitude, a.area_id, a.area_name, a.city_name, c.category_color, ed.event_cost, ed.category_name, ed.viewer_count, ed.priority_count, GROUP_CONCAT(DISTINCT CONCAT_WS('=', es.event_date, es.event_start_time, es.event_end_time)) as schedule,  GROUP_CONCAT(DISTINCT CONCAT_WS('=', ei.event_image_name, ei.primary_image)) as image from event_detail ed, event_schedule es, event_image ei, category c, area a where ed.event_detail_id = es.event_detail_id and ed.event_detail_id = ei.event_detail_id and ed.event_area_id = a.area_id and ed.is_active = 1 and ed.event_detail_id = '{$event_detail_id}' and es.event_date >= '{$current_date}'";
 
         $temp = $db->query($query);
         $result =array();
